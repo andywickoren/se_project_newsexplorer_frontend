@@ -1,1 +1,2 @@
-@import "normalize.css";
+@import "../src/vendors/normalize.css";
+@import "../src/fonts/fonts.css";

@@ -1,0 +1,30 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 104px;
+}
+
+.footer__options {
+  display: flex;
+}
+
+.footer__options-home {
+  margin-right: 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.footer__options-TripleTen {
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.footer__options-github-icon {
+  margin-right: 24px;
+  cursor: pointer;
+}
+
+.footer__options-facebook-icon {
+  cursor: pointer;
+}

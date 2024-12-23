@@ -1,0 +1,8 @@
+.about {
+  display: flex;
+  padding: 80px 104px;
+}
+
+.about__avatar {
+  margin-right: 56px;
+}
