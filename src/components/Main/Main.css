@@ -16,22 +16,20 @@
   position: relative;
 }
 
-.main__show-more-button-image {
-  background-color: white;
-  margin-top: 64px;
-  background: transparent;
-  border: none;
+.main__show-more-button {
+  all: unset;
+  font-family: "Roboto Slab";
+  position: relative;
   cursor: pointer;
-  width: 288px;
-  height: 64px;
-  /* position: absolute;
-  z-index: 10;
-  right: -27px;
-  top: -13px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 64px;
 }
 
 .main__show-more-button-text {
+  font-family: "Roboto Slab", serif !important; /* Force Roboto Slab */
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 4px;
+  right: 92px;
 }

@@ -8,16 +8,63 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.navbar__options {
+  display: flex;
+}
+
+.navbar__logged-in-options {
+  display: flex;
+
+  align-items: center;
+}
+
 .navbar__home-button {
+  margin-right: 13px;
   cursor: pointer;
   border: none;
   background-color: transparent;
   color: white;
 }
 
+.navbar__saved-articles-button {
+  border: none;
+  background: transparent;
+  color: white;
+}
+
 .navbar__signin-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
   border: none;
   background-color: transparent;
   color: white;
+}
+
+.navbar__signin-button-text {
+  position: absolute;
+  top: 0;
+  right: 63;
+}
+
+.navbar__user-button {
+  position: relative;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.navbar__user-rectangle {
+}
+
+.navbar__username {
+  align-self: center;
+  position: absolute;
+  /* top: 0;
+  right: 0; */
 }
