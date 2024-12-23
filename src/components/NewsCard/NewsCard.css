@@ -16,13 +16,13 @@
   width: max-content;
 }
 
-.newsCard__save-icon-container {
+.newsCard__bookmark-container {
   position: relative;
   top: -280px;
   right: -347px;
 }
 
-.newsCard__save-icon-bookmark {
+.newsCard__bookmark_unmarked {
   position: relative;
   top: -289px;
   right: -316px;
