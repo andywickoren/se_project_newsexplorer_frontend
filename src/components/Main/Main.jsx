@@ -4,10 +4,10 @@ import showMore from "../../assets/show-more.png";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Header from "../Header/Header";
 
-function Main({ testCards }) {
+function Main({ testCards, handleSigninClick }) {
   return (
     <>
-      <Header></Header>
+      <Header handleSigninClick={handleSigninClick}></Header>
       <div className="main">
         <h2 className="main__heading">Search Results</h2>
         <NewsCardList testCards={testCards} />

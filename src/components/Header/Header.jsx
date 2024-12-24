@@ -3,13 +3,13 @@ import Navbar from "../Navbar/Navbar";
 import SearchForm from "../SearchForm/SearchForm";
 import headerBackground from "../../assets/header-background.png";
 
-function Header({}) {
+function Header({ handleSigninClick }) {
   return (
     <header
       className="header"
       style={{ backgroundImage: `url(${headerBackground})` }}
     >
-      <Navbar></Navbar>
+      <Navbar handleSigninClick={handleSigninClick}></Navbar>
       <div className="header__content">
         <h1 className="header__title">What's going on in the world?</h1>
         <p className="header__caption">

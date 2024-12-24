@@ -28,8 +28,9 @@
 }
 
 .main__show-more-button-text {
+  align-self: center;
   font-family: "Roboto Slab", serif !important; /* Force Roboto Slab */
   position: absolute;
-  top: 4px;
-  right: 92px;
+  /* top: 4px;
+  right: 92px; */
 }

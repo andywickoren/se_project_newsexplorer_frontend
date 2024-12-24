@@ -4,15 +4,15 @@ import mainSignin from "../../assets/main-signin.png";
 import userRectangle from "../../assets/user-rectangle.png";
 import { useEffect, useState } from "react";
 
-function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+function Navbar({ handleSigninClick }) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div className="navbar">
       <div className="navbar__news-explorer-button">NewsExplorer</div>
       <div className="navbar__options">
         <button className="navbar__home-button">Home</button>
         {!isLoggedIn ? (
-          <button className="navbar__signin-button">
+          <button className="navbar__signin-button" onClick={handleSigninClick}>
             <img src={mainSignin} alt="" className="navbar__signin-image" />
             <p className="navbar__signin-button-text">Sign in</p>
           </button>

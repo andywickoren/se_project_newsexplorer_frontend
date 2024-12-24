@@ -6,10 +6,28 @@ import SavedNews from "../SavedNews/SavedNews";
 import Preloader from "../Preloader/Preloader";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import SigninModal from "../SigninModal/SigninModal";
 
 function App() {
   const [newsCards, setNewsCards] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [activeModal, setActiveModal] = useState("");
+
+  function handleCloseClick() {
+    setActiveModal("");
+  }
+
+  function handleSigninClick() {
+    setActiveModal("signin-modal");
+  }
+
+  function handleSignin() {
+    console.log("signed in bro");
+  }
+
+  function handleSubmit() {
+    console.log("you submitted bro");
+  }
 
   function testCards() {
     const cardList = [
@@ -51,7 +69,17 @@ function App() {
     <div className="app">
       {/* <Header></Header> */}
       <Routes>
-        <Route path="/" element={<Main testCards={testCards} />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Main
+                testCards={testCards}
+                handleSigninClick={handleSigninClick}
+              />
+            </>
+          }
+        />
         <Route
           path="/saved-news"
           element={<SavedNews testCards={testCards}></SavedNews>}
@@ -59,6 +87,13 @@ function App() {
       </Routes>
 
       <Footer></Footer>
+      {activeModal === "signin-modal" && (
+        <SigninModal
+          handleSignin={handleSignin}
+          handleCloseClick={handleCloseClick}
+          isOpen={activeModal === "signin-modal"}
+        ></SigninModal>
+      )}
     </div>
   );
 }
