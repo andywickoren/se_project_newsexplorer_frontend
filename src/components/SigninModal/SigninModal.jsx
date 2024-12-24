@@ -3,8 +3,13 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./SigninModal.css";
 
 function SigninModal({ handleSignin, handleCloseClick, isOpen }) {
+  const title = "Sign in";
   return (
-    <ModalWithForm handleCloseClick={handleCloseClick} isOpen={isOpen}>
+    <ModalWithForm
+      handleCloseClick={handleCloseClick}
+      isOpen={isOpen}
+      title={title}
+    >
       <label htmlFor="email" className="modal__label">
         Email
       </label>
@@ -30,7 +35,8 @@ function SigninModal({ handleSignin, handleCloseClick, isOpen }) {
           Sign in
         </button>
         <button type="button" className="modal__or-signup-btn">
-          or Sign Up
+          <span className="modal__or">or</span>{" "}
+          <span className="modal__signup">Sign up</span>
         </button>
       </div>
     </ModalWithForm>

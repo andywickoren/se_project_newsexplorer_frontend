@@ -11,14 +11,9 @@ function Main({ testCards, handleSigninClick }) {
       <div className="main">
         <h2 className="main__heading">Search Results</h2>
         <NewsCardList testCards={testCards} />
-        <button className="main__show-more-button">
-          <img
-            className="main__show-more-button-image"
-            src={showMore}
-            alt="Search"
-          />
-          <p className="main__show-more-button-text">Show More</p>
-        </button>
+        <div className="main__show-more-button-container">
+          <button className="main__show-more-button">Show More</button>
+        </div>
       </div>
     </>
   );

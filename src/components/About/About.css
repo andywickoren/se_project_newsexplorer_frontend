@@ -6,3 +6,12 @@
 .about__avatar {
   margin-right: 56px;
 }
+
+.about__title {
+  font-family: "Roboto Slab", serif;
+  font-size: 40px;
+}
+.about__description {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}

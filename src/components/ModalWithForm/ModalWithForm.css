@@ -16,10 +16,83 @@
 
 .modal__content {
   background-color: #fff;
+  /* background-color: aliceblue; */
   position: relative;
-  padding: 28px 28px 36px;
-  max-width: 496px;
+  padding: 34px 36px 28px 36px;
+  max-width: 360px;
   box-sizing: border-box;
   width: 100%;
   border-radius: 20px;
+}
+.modal__close {
+  position: absolute;
+  bottom: 0;
+  top: -408px;
+  right: -45px;
+  border: none;
+  background: transparent;
+}
+
+.modal__close-icon {
+  cursor: pointer;
+}
+
+.modal__title {
+  margin: 0 0 22px 0;
+}
+
+.modal__label {
+  color: #2f71e5;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.modal__input {
+  color: #000;
+  display: block;
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 0 0 10px 0;
+  width: 100%;
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 31px;
+  margin-top: 9px;
+}
+
+.modal__buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__signin-btn {
+  height: 47px;
+  width: 100%;
+  border-radius: 100px;
+  border: none;
+  font-family: "Roboto";
+  color: #fff;
+  background-color: #2f71e5;
+}
+
+.modal__or-signup-btn {
+  font-family: "Inter", sans-serif;
+  margin-top: 16px;
+  border: none;
+  background: transparent;
+  align-self: center;
+}
+
+.modal__or {
+  color: black;
+}
+
+.modal__signup {
+  color: #2f71e5;
+  cursor: pointer;
 }

@@ -77,6 +77,7 @@ function App() {
                 testCards={testCards}
                 handleSigninClick={handleSigninClick}
               />
+              <About></About>
             </>
           }
         />

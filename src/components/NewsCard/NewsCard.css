@@ -1,19 +1,27 @@
 .newsCard__container {
-  background-color: #4682b4;
+  background-color: #fff;
   height: 576px;
   width: 400px;
   border-radius: 25px;
   /* margin-top: 64px; */
   position: relative;
+  overflow: hidden;
 }
 
 .newsCard__image-container {
   height: 292px;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  overflow: hidden;
 }
 
 .newsCard__image {
-  height: 292px;
-  width: max-content;
+  /* height: 292px;
+  width: max-content; */
+  width: 100%; /* Scale the image to fit the container width */
+  height: 100%; /* Ensures the image fills the container without distortion */
+  object-fit: cover;
 }
 
 .newsCard__bookmark-container {
@@ -26,4 +34,29 @@
   position: relative;
   top: -289px;
   right: -316px;
+}
+
+.newsCard__info {
+  padding: 20px 24px 24px 24px;
+}
+
+.newsCard__date {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  color: #b6bcbf;
+}
+
+.newsCard__title {
+  font-family: "Roboto Slab";
+  font-size: 26px;
+}
+
+.newsCard__description {
+  font-family: "Roboto", sans-serif;
+}
+
+.newsCard__footer {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.4px;
+  color: #b6bcbf;
 }

@@ -1,6 +1,7 @@
 .main {
   padding: 80px 104px;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+  background-color: #f5f6f7;
 }
 
 .main__heading {
@@ -10,13 +11,32 @@
   font-size: 40px;
 }
 
+.main__show-more-button-container {
+  display: flex;
+  justify-content: center;
+}
+
 .main__show-more-button {
-  background-color: transparent;
   border: none;
   position: relative;
 }
 
 .main__show-more-button {
+  align-self: center;
+  height: 64px;
+  width: 288px;
+  background-color: white;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-size: 16px;
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+  margin-top: 64px;
+  border-radius: 80px;
+}
+
+/* .main__show-more-button {
   all: unset;
   font-family: "Roboto Slab";
   position: relative;
@@ -25,7 +45,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 64px;
-}
+} */
 
 .main__show-more-button-text {
   align-self: center;
