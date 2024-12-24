@@ -78,6 +78,7 @@
   font-family: "Roboto";
   color: #fff;
   background-color: #2f71e5;
+  cursor: pointer;
 }
 
 .modal__or-signup-btn {

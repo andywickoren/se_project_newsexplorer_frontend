@@ -7,6 +7,7 @@ import Preloader from "../Preloader/Preloader";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import SigninModal from "../SigninModal/SigninModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
 
 function App() {
   const [newsCards, setNewsCards] = useState([]);
@@ -23,6 +24,14 @@ function App() {
 
   function handleSignin() {
     console.log("signed in bro");
+  }
+
+  function handleSignup() {
+    console.log("signed up bro");
+  }
+
+  function handleSignupClick() {
+    setActiveModal("register-modal");
   }
 
   function handleSubmit() {
@@ -93,7 +102,16 @@ function App() {
           handleSignin={handleSignin}
           handleCloseClick={handleCloseClick}
           isOpen={activeModal === "signin-modal"}
+          openRegisterModal={handleSignupClick}
         ></SigninModal>
+      )}
+      {activeModal === "register-modal" && (
+        <RegisterModal
+          handleSignup={handleSignup}
+          handleCloseClick={handleCloseClick}
+          isOpen={activeModal === "register-modal"}
+          openSigninModal={handleSigninClick}
+        ></RegisterModal>
       )}
     </div>
   );

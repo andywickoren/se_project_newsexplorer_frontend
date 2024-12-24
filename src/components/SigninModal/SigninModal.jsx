@@ -2,7 +2,12 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./SigninModal.css";
 
-function SigninModal({ handleSignin, handleCloseClick, isOpen }) {
+function SigninModal({
+  openRegisterModal,
+  handleSignin,
+  handleCloseClick,
+  isOpen,
+}) {
   const title = "Sign in";
   return (
     <ModalWithForm
@@ -31,10 +36,18 @@ function SigninModal({ handleSignin, handleCloseClick, isOpen }) {
         placeholder="Password"
       />
       <div className="modal__buttons-wrapper">
-        <button type="submit" className="modal__submit modal__signin-btn">
+        <button
+          type="submit"
+          className="modal__submit modal__signin-btn"
+          onClick={handleSignin}
+        >
           Sign in
         </button>
-        <button type="button" className="modal__or-signup-btn">
+        <button
+          type="button"
+          className="modal__or-signup-btn"
+          onClick={openRegisterModal}
+        >
           <span className="modal__or">or</span>{" "}
           <span className="modal__signup">Sign up</span>
         </button>
