@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import SigninModal from "../SigninModal/SigninModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import ConfirmRegisterModal from "../ConfirmRegisterModal/ConfirmRegisterModal";
 
 function App() {
   const [newsCards, setNewsCards] = useState([]);
@@ -28,6 +29,7 @@ function App() {
 
   function handleSignup() {
     console.log("signed up bro");
+    setActiveModal("confirm-register-modal");
   }
 
   function handleSignupClick() {
@@ -112,6 +114,12 @@ function App() {
           isOpen={activeModal === "register-modal"}
           openSigninModal={handleSigninClick}
         ></RegisterModal>
+      )}
+      {activeModal === "confirm-register-modal" && (
+        <ConfirmRegisterModal
+          openSigninModal={handleSigninClick}
+          handleCloseClick={handleCloseClick}
+        ></ConfirmRegisterModal>
       )}
     </div>
   );

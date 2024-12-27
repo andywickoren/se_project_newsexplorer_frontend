@@ -21,3 +21,9 @@
   font-weight: 400;
   src: url("./Inter-Regular.otf");
 }
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 900;
+  src: url("./Roboto-Black.ttf");
+}
