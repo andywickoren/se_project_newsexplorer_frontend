@@ -16,6 +16,11 @@ header h1 {
   /* font-size: 60px; */
 }
 
+.header__title {
+  font-size: 64px;
+  width: 608px;
+}
+
 .header__content {
   display: flex;
   flex-direction: column;

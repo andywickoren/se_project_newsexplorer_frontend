@@ -1,11 +1,20 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  padding: 104px;
+  padding: 24px 40px 18px;
+  font-family: "Roboto", sans-serif;
 }
 
+.footer__copyright {
+  color: #b6bcbf;
+}
 .footer__options {
   display: flex;
+  align-items: center;
+}
+
+.footer__options-home {
+  font-family: "Roboto", sans-serif;
 }
 
 .footer__options-home {

@@ -49,6 +49,7 @@
 .newsCard__title {
   font-family: "Roboto Slab";
   font-size: 26px;
+  font-weight: 400;
 }
 
 .newsCard__description {

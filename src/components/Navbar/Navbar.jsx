@@ -13,32 +13,37 @@ function Navbar({ handleSigninClick, layout, username }) {
     <div className="navbar">
       <div className="navbar__news-explorer-button">NewsExplorer</div>
       <div className="navbar__options">
-        <button
-          className={`navbar__home-button ${
-            layout === "SavedNews" ? "navbar__home-button_saved-news" : ""
-          }`}
-        >
-          Home
-        </button>
+        <Link to="/" className="navbar__link">
+          <button
+            className={`navbar__home-button ${
+              layout === "SavedNews" ? "navbar__home-button_saved-news" : ""
+            }`}
+          >
+            Home
+          </button>
+        </Link>
         {layout === "SavedNews" ? (
           <div className="navbar__saved-news-options">
             <p className="navbar__saved-articles-text">Saved Articles</p>
-            <button className="navbar__user-button">
-              <img
-                src={userRectangleSavedNews}
-                alt=""
-                className={"navbar__user-rectangle_saved-news"}
-              />
-              <div className="navbar__user-button-elements">
-                <p className="navbar__user-button-text_saved-news"></p>
-                {username || "User"}
+            <Link to="/" className="navbar__link">
+              <button className="navbar__user-button">
                 <img
-                  src={union}
+                  src={userRectangleSavedNews}
                   alt=""
-                  className="navbar__user-button-union_saved-news"
+                  className={"navbar__user-rectangle_saved-news"}
                 />
-              </div>
-            </button>
+
+                <div className="navbar__user-button-elements">
+                  <p className="navbar__user-button-text_saved-news"></p>
+                  {username || "User"}
+                  <img
+                    src={union}
+                    alt=""
+                    className="navbar__user-button-union_saved-news"
+                  />
+                </div>
+              </button>
+            </Link>
           </div>
         ) : !isLoggedIn ? (
           <button className="navbar__signin-button" onClick={handleSigninClick}>

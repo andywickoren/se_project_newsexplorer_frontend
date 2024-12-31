@@ -1,3 +1,5 @@
+import "./SavedNewsHeader.css";
+
 function SavedNewsHeader() {
   return (
     <div className="saved-news-header">
@@ -6,7 +8,10 @@ function SavedNewsHeader() {
         Elise, you have 5 saved articles
       </h2>
       <p className="saved-news-header__caption">
-        By keywords: Nature, Yellowstone, and 2 other
+        By keywords:{" "}
+        <span className="saved-news-header__keywords">
+          Nature, Yellowstone, and 2 others{" "}
+        </span>
       </p>
     </div>
   );

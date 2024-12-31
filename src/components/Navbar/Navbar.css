@@ -2,14 +2,30 @@
   height: 80px;
   display: flex;
   justify-content: space-between;
-  padding-left: 104px;
-  padding-right: 104px;
+  padding-left: 40px;
+  padding-right: 40px;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid #d1d2d6;
+}
+
+.navbar__news-explorer-button {
+  font-family: "Roboto Slab";
+  font-weight: 700;
+}
+
+.navbar__link {
+  display: contents; /* Makes the <Link> element "invisible" to layout */
 }
 
 .navbar__options {
   display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navbar__options button {
+  font-family: "Roboto", sans-serif;
 }
 
 .navbar__logged-in-options {
@@ -19,19 +35,35 @@
 }
 
 .navbar__home-button {
-  margin-right: 13px;
-  cursor: pointer;
+  margin-right: 76px;
+  /* cursor: pointer; */
   border: none;
   background-color: transparent;
   color: white;
+  height: 80px;
+  border-bottom: 3px solid #fff;
+  width: 70px;
 }
 
 .navbar__home-button_saved-news {
   color: black;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .navbar__saved-news-options {
   display: flex;
+  gap: 18px;
+}
+
+.navbar__user-button-elements p,
+.navbar__user-button-elements span {
+  font-weight: 500; /* Apply the font weight to text elements inside */
+}
+
+.navbar__user-button-text_saved-news {
+  font-weight: 500;
 }
 
 .navbar__user-rectangle {
@@ -45,7 +77,20 @@
 .navbar__saved-articles-button {
   border: none;
   background: transparent;
-  color: white;
+  color: #b6bcbf;
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 64px;
+}
+
+.navbar__saved-articles-text {
+  margin: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid black;
+  width: 178px;
+  justify-content: center;
 }
 
 .navbar__signin-button {
