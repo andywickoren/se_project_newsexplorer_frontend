@@ -22,9 +22,7 @@ function NewsCard({ name, url }) {
         <h3 className="newsCard__title">CardTitle</h3>
         <p className="newsCard__description">
           Ever since I read Richard Louv's influential book, "Last Child in the
-          Woods," the idea of having a special "sit spot" has stuck with me.
-          This advice, which Louv attributes to nature educator Jon Young, is
-          for both adults and children to find...
+          Woods,"
         </p>
         <footer className="newsCard__footer">NATIONAL GEOGRAPHIC</footer>
       </div>

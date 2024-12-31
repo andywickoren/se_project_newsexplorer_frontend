@@ -4,12 +4,13 @@ import SearchForm from "../SearchForm/SearchForm";
 import headerBackground from "../../assets/header-background.png";
 
 function Header({ handleSigninClick }) {
+  const layout = "Home";
   return (
     <header
       className="header"
       style={{ backgroundImage: `url(${headerBackground})` }}
     >
-      <Navbar handleSigninClick={handleSigninClick}></Navbar>
+      <Navbar handleSigninClick={handleSigninClick} layout={layout}></Navbar>
       <div className="header__content">
         <h1 className="header__title">What's going on in the world?</h1>
         <p className="header__caption">

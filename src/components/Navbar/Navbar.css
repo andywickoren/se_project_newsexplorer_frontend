@@ -26,6 +26,22 @@
   color: white;
 }
 
+.navbar__home-button_saved-news {
+  color: black;
+}
+
+.navbar__saved-news-options {
+  display: flex;
+}
+
+.navbar__user-rectangle {
+}
+.navbar__user-rectangle_saved-news {
+  position: relative;
+  color: black;
+  align-self: center;
+}
+
 .navbar__saved-articles-button {
   border: none;
   background: transparent;
@@ -50,7 +66,6 @@
 
 .navbar__user-button {
   position: relative;
-  position: relative;
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -59,12 +74,32 @@
   color: white;
 }
 
-.navbar__user-rectangle {
+.navbar__user-button-elements {
+  position: absolute;
+  align-self: center;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: black;
 }
 
-.navbar__username {
+.navbar__user-button-text_saved-news {
+  align-self: center;
+}
+
+.navbar__user-button-username {
   align-self: center;
   position: absolute;
   /* top: 0;
   right: 0; */
+}
+
+.navbar__username_saved-news {
+  align-self: center;
+  position: absolute;
+  color: black;
 }
