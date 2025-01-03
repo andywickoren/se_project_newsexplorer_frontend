@@ -4,8 +4,18 @@ import bookmarkContainer from "../../assets/bookmark-container.png";
 import bookmarkUnmarked from "../../assets/bookmark-unmarked.png";
 import bookmarkMarked from "../../assets/bookmark-marked.png";
 
-function NewsCard({ name, url }) {
+function NewsCard({ name, date, url, description, author }) {
   const [isSaved, setisSaved] = useState(true);
+
+  // const formatDate = (dateString) => {
+  //   const date = new Date(dateString);
+  //   return new Intl.DateTimeFormat("en-US", {
+  //     month: "long",
+  //     day: "numeric",
+  //     year: "numeric",
+  //   }).format(date);
+  // };
+
   return (
     <div className="newsCard__container">
       <div className="newsCard__image-container">
@@ -18,13 +28,10 @@ function NewsCard({ name, url }) {
         )}
       </div>
       <div className="newsCard__info">
-        <div className="newsCard__date">Today's Date</div>
-        <h3 className="newsCard__title">CardTitle</h3>
-        <p className="newsCard__description">
-          Ever since I read Richard Louv's influential book, "Last Child in the
-          Woods,"
-        </p>
-        <footer className="newsCard__footer">NATIONAL GEOGRAPHIC</footer>
+        <div className="newsCard__date">{date}</div>
+        <h3 className="newsCard__title">{name}</h3>
+        <p className="newsCard__description">{description}</p>
+        <footer className="newsCard__footer">{author}</footer>
       </div>
     </div>
   );

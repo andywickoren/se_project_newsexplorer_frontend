@@ -12,3 +12,15 @@
   padding: 32px 40px;
   margin-top: 32px;
 }
+
+@media (max-width: 1025px) {
+  .news-card-list {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 765px) {
+  .news-card-list {
+    gap: 10px;
+  }
+}

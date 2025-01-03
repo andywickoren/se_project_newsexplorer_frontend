@@ -9,13 +9,64 @@ import { Routes, Route } from "react-router-dom";
 import SigninModal from "../SigninModal/SigninModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import ConfirmRegisterModal from "../ConfirmRegisterModal/ConfirmRegisterModal";
+import { getItems } from "../../utils/api";
 
 function App() {
-  const [newsCards, setNewsCards] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [newsCards, setNewsCards] = useState([]);
 
-  function handleCloseClick() {
+  // const testCards = [{
+  //   name: "item1",
+  //   imageUrl:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
+  // },
+  // {
+  //   name: "item2",
+  //   imageUrl:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
+  // },
+  // {
+  //   name: "item3",
+  //   imageUrl:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
+  // },
+  // {
+  //   name: "item4",
+  //   imageUrl:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
+  // },
+  // {
+  //   name: "item5",
+  //   imageUrl:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
+  // },
+  // {
+  //   name: "item6",
+  //   imageUrl:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
+  // }];
+
+  // const apiKey = "460e8a428e8641e6b8648d256f9a2375";
+
+  useEffect(() => {
+    getItems()
+      .then((data) => {
+        setNewsCards(
+          data.articles.map((article) => ({
+            name: article.title,
+            imageUrl: article.urlToImage,
+            date: article.publishedAt,
+            description: article.content,
+            author: article.author,
+          }))
+        );
+      })
+      .catch(console.error);
+  }, []);
+
+  function closeActiveModal() {
     setActiveModal("");
   }
 
@@ -40,69 +91,33 @@ function App() {
     console.log("you submitted bro");
   }
 
-  function testCards() {
-    const cardList = [
-      {
-        name: "item1",
-        imageUrl:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
-      },
-      {
-        name: "item2",
-        imageUrl:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
-      },
-      {
-        name: "item3",
-        imageUrl:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
-      },
-      {
-        name: "item4",
-        imageUrl:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
-      },
-      {
-        name: "item5",
-        imageUrl:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
-      },
-      {
-        name: "item6",
-        imageUrl:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
-      },
-    ];
-    return cardList;
-  }
-
   return (
     <div className="app">
-      {/* <Header></Header> */}
+      <div>Test</div>
       <Routes>
         <Route
           path="/"
           element={
             <>
               <Main
-                testCards={testCards}
+                newsCards={newsCards}
                 handleSigninClick={handleSigninClick}
               />
-              <About></About>
+              {/* <About></About> */}
             </>
           }
         />
-        <Route
+        {/* <Route
           path="/saved-news"
-          element={<SavedNews testCards={testCards}></SavedNews>}
-        />
+          element={<SavedNews newsCards={newsCards}></SavedNews>}
+        /> */}
       </Routes>
 
-      <Footer></Footer>
+      {/* <Footer></Footer>
       {activeModal === "signin-modal" && (
         <SigninModal
           handleSignin={handleSignin}
-          handleCloseClick={handleCloseClick}
+          handleCloseClick={closeActiveModal}
           isOpen={activeModal === "signin-modal"}
           openRegisterModal={handleSignupClick}
         ></SigninModal>
@@ -110,7 +125,7 @@ function App() {
       {activeModal === "register-modal" && (
         <RegisterModal
           handleSignup={handleSignup}
-          handleCloseClick={handleCloseClick}
+          handleCloseClick={closeActiveModal}
           isOpen={activeModal === "register-modal"}
           openSigninModal={handleSigninClick}
         ></RegisterModal>
@@ -118,9 +133,9 @@ function App() {
       {activeModal === "confirm-register-modal" && (
         <ConfirmRegisterModal
           openSigninModal={handleSigninClick}
-          handleCloseClick={handleCloseClick}
+          handleCloseClick={closeActiveModal}
         ></ConfirmRegisterModal>
-      )}
+      )}  */}
     </div>
   );
 }

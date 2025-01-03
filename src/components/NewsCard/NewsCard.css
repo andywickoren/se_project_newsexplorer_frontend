@@ -1,7 +1,7 @@
 .newsCard__container {
   background-color: #fff;
-  height: 420px;
-  width: 224px;
+  max-height: 576px;
+  width: 400px;
   border-radius: 25px;
   /* margin-top: 64px; */
   position: relative;
@@ -9,7 +9,7 @@
 }
 
 .newsCard__image-container {
-  height: 150px;
+  height: 292px;
   width: 100%;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -37,27 +37,88 @@
 }
 
 .newsCard__info {
-  padding: 20px 24px 24px 24px;
+  padding: 20px 24px 0 24px;
 }
 
 .newsCard__date {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
   color: #b6bcbf;
+  margin: 0 0 12px 0;
 }
 
 .newsCard__title {
+  margin: 0 0 16px 0;
   font-family: "Roboto Slab";
   font-size: 26px;
   font-weight: 400;
+  min-height: calc(1.2em * 1); /* Minimum height for 1 line */
+  max-height: calc(1.2em * 2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+  word-wrap: break-word;
 }
 
 .newsCard__description {
   font-family: "Roboto", sans-serif;
+  margin: 0 0 18px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Limit to 5 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis */
 }
 
 .newsCard__footer {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.4px;
   color: #b6bcbf;
+  margin: 0 0 24px 0;
+}
+
+@media (max-width: 1025px) {
+  .newsCard__container {
+    height: 420px;
+    width: 224px;
+    border-radius: 25px;
+    /* margin-top: 64px; */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .newsCard__image-container {
+    height: 150px;
+  }
+  .newsCard__info {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .newsCard__container {
+    height: 420px;
+    width: 224px;
+    border-radius: 25px;
+    /* margin-top: 64px; */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .newsCard__image-container {
+    height: 150px;
+  }
+}
+
+@media (max-width: 735px) {
+  .newsCard__container {
+    height: 440px;
+    width: 288px;
+  }
+  .newsCard__image-container {
+    height: 196px;
+  }
 }

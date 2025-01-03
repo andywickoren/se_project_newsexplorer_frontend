@@ -11,10 +11,17 @@
 .navbar__news-explorer-button {
   font-family: "Roboto Slab";
   font-weight: 700;
+  color: #fff;
+  cursor: auto;
 }
 
+.navbar__news-explorer-button_saved-news {
+  color: #000;
+  cursor: pointer;
+}
 .navbar__link {
-  display: contents; /* Makes the <Link> element "invisible" to layout */
+  display: contents;
+  text-decoration: none; /* Makes the <Link> element "invisible" to layout */
 }
 
 .navbar__options {

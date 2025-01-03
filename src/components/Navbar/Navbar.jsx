@@ -11,7 +11,17 @@ function Navbar({ handleSigninClick, layout, username }) {
 
   return (
     <div className="navbar">
-      <div className="navbar__news-explorer-button">NewsExplorer</div>
+      <Link to="/" className="navbar__link">
+        <div
+          className={`navbar__news-explorer-button ${
+            layout === "SavedNews"
+              ? "navbar__news-explorer-button_saved-news"
+              : ""
+          }`}
+        >
+          NewsExplorer
+        </div>
+      </Link>
       <div className="navbar__options">
         <Link to="/" className="navbar__link">
           <button
