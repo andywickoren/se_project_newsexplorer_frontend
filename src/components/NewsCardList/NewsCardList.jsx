@@ -1,28 +1,32 @@
 import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
+import { useState } from "react";
 
 function NewsCardList({ newsCards, layout }) {
   console.log(newsCards);
-  const firstTenCards = newsCards.slice(0, 10);
-  // return (
-  //   <ul
-  //     className={`news-card-list ${
-  //       layout === "SavedNews" ? "news-card-list_saved-news" : ""
-  //     }`}
-  //   >
-  //     {cardsList.map((card) => (
-  //       <NewsCard name={card.name} url={card.imageUrl} key={card.name} />
-  //     ))}
-  //   </ul>
-  // );
+  console.log("layout:  ===>", layout);
+  const [cardsToShow, setCardsToShow] = useState(3); // Initial number of cards to show
+
+  // Slice the newsCards array based on cardsToShow
+  const renderedCards = newsCards.slice(0, cardsToShow);
+
+  // Handle the "Show More" button click
+  const handleShowMore = () => {
+    setCardsToShow((prevCount) => prevCount + 3); // Increment cardsToShow by 3
+  };
+
   return (
-    <div>
+    <div className="news-cards">
+      {layout !== "SavedNews" && (
+        <h2 className="news-cards__heading">Search Results</h2>
+      )}
+
       <ul
         className={`news-card-list ${
-          layout === "SavedNews" ? "news-card-list_saved-news" : ""
+          layout === "SavedNews" ? "news-cards-list_saved-news" : ""
         }`}
       >
-        {firstTenCards.map((card) => (
+        {renderedCards.map((card) => (
           <NewsCard
             name={card.name}
             url={card.imageUrl}
@@ -33,6 +37,16 @@ function NewsCardList({ newsCards, layout }) {
           />
         ))}
       </ul>
+      {layout !== "SavedNews" && (
+        <div className="news-cards__show-more-button-container">
+          <button
+            className="news-cards__show-more-button"
+            onClick={handleShowMore}
+          >
+            Show More
+          </button>
+        </div>
+      )}
     </div>
   );
 }

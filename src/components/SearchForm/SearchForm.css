@@ -1,15 +1,16 @@
 .search-form {
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   width: 100%;
   max-width: 610px;
   margin: 0 auto;
   position: relative;
+  height: 145px;
 }
 
 .search-form__input {
-  margin-bottom: 20px;
+  /* margin-bottom: 80px; */
 }
 
 .search-form__input {

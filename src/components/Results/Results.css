@@ -1,0 +1,21 @@
+/* .results {
+  height: 374px;
+  position: relative;
+  background-color: #f5f6f7;
+  display: flex;
+  justify-content: center;
+} */
+
+.results__preloader {
+  position: relative;
+}
+
+.results__news-cards {
+  display: block;
+  background-color: #f5f6f7;
+}
+
+.results__no-results {
+  display: flex;
+  justify-content: center;
+}

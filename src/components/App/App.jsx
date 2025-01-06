@@ -10,12 +10,14 @@ import SigninModal from "../SigninModal/SigninModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import ConfirmRegisterModal from "../ConfirmRegisterModal/ConfirmRegisterModal";
 import { getItems } from "../../utils/api";
+import Results from "../Results/Results";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [newsCards, setNewsCards] = useState([]);
+  const [hasNoResults, setHasNoResults] = useState(false);
 
   // const testCards = [{
   //   name: "item1",
@@ -50,9 +52,18 @@ function App() {
 
   // const apiKey = "460e8a428e8641e6b8648d256f9a2375";
 
-  useEffect(() => {
-    getItems()
+  const handleSearch = (query) => {
+    setIsLoading(true);
+    getItems(query)
       .then((data) => {
+        console.log(
+          "is data.articles and array?",
+          Array.isArray(data.articles)
+        );
+        if (!data.articles || data.articles.length === 0) {
+          console.log("no articles found");
+          setHasNoResults(true);
+        }
         setNewsCards(
           data.articles.map((article) => ({
             name: article.title,
@@ -63,8 +74,30 @@ function App() {
           }))
         );
       })
-      .catch(console.error);
-  }, []);
+      .catch((err) => console.error("Error fetching news:", err))
+      .finally(() => setIsLoading(false));
+    setHasNoResults(false);
+  };
+
+  // useEffect(() => {
+  //   setHasNoResults(false);
+  // });
+
+  // useEffect(() => {
+  //   getItems()
+  //     .then((data) => {
+  //       setNewsCards(
+  //         data.articles.map((article) => ({
+  //           name: article.title,
+  //           imageUrl: article.urlToImage,
+  //           date: article.publishedAt,
+  //           description: article.content,
+  //           author: article.author,
+  //         }))
+  //       );
+  //     })
+  //     .catch(console.error);
+  // }, []);
 
   function closeActiveModal() {
     setActiveModal("");
@@ -93,27 +126,35 @@ function App() {
 
   return (
     <div className="app">
-      <div>Test</div>
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Main
-                newsCards={newsCards}
+              <Header
                 handleSigninClick={handleSigninClick}
-              />
-              {/* <About></About> */}
+                handleSearch={handleSearch}
+              ></Header>
+              {(isLoading || hasNoResults || newsCards.length > 0) && (
+                <Main
+                  // handleSearch={handleSearch}
+                  newsCards={newsCards}
+                  // handleSigninClick={handleSigninClick}
+                  isLoading={isLoading}
+                  noResults={hasNoResults}
+                />
+              )}
+              <About></About>
             </>
           }
         />
-        {/* <Route
+        <Route
           path="/saved-news"
           element={<SavedNews newsCards={newsCards}></SavedNews>}
-        /> */}
+        />
       </Routes>
 
-      {/* <Footer></Footer>
+      <Footer></Footer>
       {activeModal === "signin-modal" && (
         <SigninModal
           handleSignin={handleSignin}
@@ -135,7 +176,7 @@ function App() {
           openSigninModal={handleSigninClick}
           handleCloseClick={closeActiveModal}
         ></ConfirmRegisterModal>
-      )}  */}
+      )}
     </div>
   );
 }
