@@ -18,39 +18,51 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [newsCards, setNewsCards] = useState([]);
   const [hasNoResults, setHasNoResults] = useState(false);
-
-  // const testCards = [{
-  //   name: "item1",
-  //   imageUrl:
-  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
-  // },
-  // {
-  //   name: "item2",
-  //   imageUrl:
-  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
-  // },
-  // {
-  //   name: "item3",
-  //   imageUrl:
-  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
-  // },
-  // {
-  //   name: "item4",
-  //   imageUrl:
-  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
-  // },
-  // {
-  //   name: "item5",
-  //   imageUrl:
-  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
-  // },
-  // {
-  //   name: "item6",
-  //   imageUrl:
-  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3e-rpzenbY1X-ForXYQLTGs6hWol6_qf9gA&s",
-  // }];
+  const [token, setToken] = useState("");
+  const [currentUser, setCurrentUser] = useState("");
 
   // const apiKey = "460e8a428e8641e6b8648d256f9a2375";
+
+  const mockUser = {
+    username: "testuser",
+    password: "password123",
+  };
+
+  function login(username, password) {
+    if (username === mockUser.username && password === mockUser.password) {
+      const token = "mockToken123";
+      localStorage.setItem("token", token);
+      return { success: true, token };
+    } else {
+      return { success: false, message: "Invalid credentials" };
+    }
+  }
+
+  const onLogin = (data) => {
+    const { username, password } = data;
+    if (!username || !password) {
+      console.log("No username or password provided");
+      return;
+    }
+
+    const res = login(username, password);
+
+    if (res.success) {
+      console.log("Login successful", res);
+
+      setToken(res.token);
+
+      const user = { username: mockUser.username, name: mockUser.name };
+
+      setCurrentUser(user);
+
+      setIsLoggedIn(true);
+
+      closeActiveModal();
+    } else {
+      console.log("Login failed:", res.message);
+    }
+  };
 
   const handleSearch = (query) => {
     setIsLoading(true);
@@ -134,6 +146,7 @@ function App() {
               <Header
                 handleSigninClick={handleSigninClick}
                 handleSearch={handleSearch}
+                isLoggedIn={isLoggedIn}
               ></Header>
               {(isLoading || hasNoResults || newsCards.length > 0) && (
                 <Main
@@ -157,7 +170,7 @@ function App() {
       <Footer></Footer>
       {activeModal === "signin-modal" && (
         <SigninModal
-          handleSignin={handleSignin}
+          onLogin={onLogin}
           handleCloseClick={closeActiveModal}
           isOpen={activeModal === "signin-modal"}
           openRegisterModal={handleSignupClick}

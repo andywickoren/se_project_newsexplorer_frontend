@@ -6,8 +6,8 @@ import userRectangleSavedNews from "../../assets/user-rectangle-saved-news.png";
 import union from "../../assets/union.png";
 import { useEffect, useState } from "react";
 
-function Navbar({ handleSigninClick, layout, username }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+function Navbar({ handleSigninClick, layout, username, isLoggedIn }) {
+  // const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
     <div className="navbar">

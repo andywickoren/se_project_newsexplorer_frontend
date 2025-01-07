@@ -1,7 +1,13 @@
 import "./ModalWithForm.css";
 import close from "../../assets/close.png";
 
-function ModalWithForm({ children, handleCloseClick, isOpen, title }) {
+function ModalWithForm({
+  children,
+  handleCloseClick,
+  isOpen,
+  title,
+  onSubmit,
+}) {
   const handleOverlay = (e) => {
     e.target === e.currentTarget && handleCloseClick();
   };
@@ -18,9 +24,11 @@ function ModalWithForm({ children, handleCloseClick, isOpen, title }) {
           className="modal__close"
           aria-label="close"
         >
-          <img src={close} alt="" className="modal__close-icon" />
+          <img src={close} alt="Close modal" className="modal__close-icon" />
         </button>
-        <form className="modal__form">{children}</form>
+        <form className="modal__form" onSubmit={onSubmit}>
+          {children}
+        </form>
       </div>
     </div>
   );
