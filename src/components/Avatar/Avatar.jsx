@@ -1,9 +1,8 @@
-import avatarImage from "../../assets/avatar-image.png";
+import avatarImage from "../../assets/profile.jpg";
+import "./Avatar.css";
 
 function Avatar() {
-  return (
-    <img src={avatarImage} alt="Search" className="search-form__search-field" />
-  );
+  return <img src={avatarImage} alt="Search" className="avatar" />;
 }
 
 export default Avatar;

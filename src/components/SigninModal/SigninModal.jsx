@@ -10,7 +10,7 @@ function SigninModal({ openRegisterModal, onLogin, handleCloseClick, isOpen }) {
   const title = "Sign in";
   const handleSubmit = (e) => {
     e.preventDefault();
-    const values = { username: email, password };
+    const values = { email, password };
     onLogin(values);
   };
 

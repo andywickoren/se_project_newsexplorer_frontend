@@ -10,6 +10,7 @@ import SigninModal from "../SigninModal/SigninModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import ConfirmRegisterModal from "../ConfirmRegisterModal/ConfirmRegisterModal";
 import { getItems } from "../../utils/api";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import Results from "../Results/Results";
 
 function App() {
@@ -24,12 +25,14 @@ function App() {
   // const apiKey = "460e8a428e8641e6b8648d256f9a2375";
 
   const mockUser = {
+    email: "email@gmail.com",
     username: "testuser",
     password: "password123",
+    name: "Irene",
   };
 
-  function login(username, password) {
-    if (username === mockUser.username && password === mockUser.password) {
+  function login(email, password) {
+    if (email === mockUser.email && password === mockUser.password) {
       const token = "mockToken123";
       localStorage.setItem("token", token);
       return { success: true, token };
@@ -39,22 +42,23 @@ function App() {
   }
 
   const onLogin = (data) => {
-    const { username, password } = data;
-    if (!username || !password) {
+    const { email, password } = data;
+    if (!email || !password) {
       console.log("No username or password provided");
       return;
     }
 
-    const res = login(username, password);
+    const res = login(email, password);
 
     if (res.success) {
       console.log("Login successful", res);
 
       setToken(res.token);
 
-      const user = { username: mockUser.username, name: mockUser.name };
+      const user = { email: mockUser.email, name: mockUser.name };
 
       setCurrentUser(user);
+      console.log("Current User:", user);
 
       setIsLoggedIn(true);
 
@@ -63,6 +67,16 @@ function App() {
       console.log("Login failed:", res.message);
     }
   };
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem("token");
+    if (storedToken) {
+      setToken(storedToken);
+      const user = { email: mockUser.email, name: mockUser.name };
+      setCurrentUser(user);
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   const handleSearch = (query) => {
     setIsLoading(true);
@@ -137,60 +151,62 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Header
-                handleSigninClick={handleSigninClick}
-                handleSearch={handleSearch}
-                isLoggedIn={isLoggedIn}
-              ></Header>
-              {(isLoading || hasNoResults || newsCards.length > 0) && (
-                <Main
-                  // handleSearch={handleSearch}
-                  newsCards={newsCards}
-                  // handleSigninClick={handleSigninClick}
-                  isLoading={isLoading}
-                  noResults={hasNoResults}
-                />
-              )}
-              <About></About>
-            </>
-          }
-        />
-        <Route
-          path="/saved-news"
-          element={<SavedNews newsCards={newsCards}></SavedNews>}
-        />
-      </Routes>
+    <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
+      <div className="app">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header
+                  handleSigninClick={handleSigninClick}
+                  handleSearch={handleSearch}
+                  isLoggedIn={isLoggedIn}
+                ></Header>
+                {(isLoading || hasNoResults || newsCards.length > 0) && (
+                  <Main
+                    // handleSearch={handleSearch}
+                    newsCards={newsCards}
+                    // handleSigninClick={handleSigninClick}
+                    isLoading={isLoading}
+                    noResults={hasNoResults}
+                  />
+                )}
+                <About></About>
+              </>
+            }
+          />
+          <Route
+            path="/saved-news"
+            element={<SavedNews newsCards={newsCards}></SavedNews>}
+          />
+        </Routes>
 
-      <Footer></Footer>
-      {activeModal === "signin-modal" && (
-        <SigninModal
-          onLogin={onLogin}
-          handleCloseClick={closeActiveModal}
-          isOpen={activeModal === "signin-modal"}
-          openRegisterModal={handleSignupClick}
-        ></SigninModal>
-      )}
-      {activeModal === "register-modal" && (
-        <RegisterModal
-          handleSignup={handleSignup}
-          handleCloseClick={closeActiveModal}
-          isOpen={activeModal === "register-modal"}
-          openSigninModal={handleSigninClick}
-        ></RegisterModal>
-      )}
-      {activeModal === "confirm-register-modal" && (
-        <ConfirmRegisterModal
-          openSigninModal={handleSigninClick}
-          handleCloseClick={closeActiveModal}
-        ></ConfirmRegisterModal>
-      )}
-    </div>
+        <Footer></Footer>
+        {activeModal === "signin-modal" && (
+          <SigninModal
+            onLogin={onLogin}
+            handleCloseClick={closeActiveModal}
+            isOpen={activeModal === "signin-modal"}
+            openRegisterModal={handleSignupClick}
+          ></SigninModal>
+        )}
+        {activeModal === "register-modal" && (
+          <RegisterModal
+            handleSignup={handleSignup}
+            handleCloseClick={closeActiveModal}
+            isOpen={activeModal === "register-modal"}
+            openSigninModal={handleSigninClick}
+          ></RegisterModal>
+        )}
+        {activeModal === "confirm-register-modal" && (
+          <ConfirmRegisterModal
+            openSigninModal={handleSigninClick}
+            handleCloseClick={closeActiveModal}
+          ></ConfirmRegisterModal>
+        )}
+      </div>
+    </CurrentUserContext.Provider>
   );
 }
 

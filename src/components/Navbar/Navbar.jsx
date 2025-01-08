@@ -5,8 +5,11 @@ import userRectangle from "../../assets/user-rectangle.png";
 import userRectangleSavedNews from "../../assets/user-rectangle-saved-news.png";
 import union from "../../assets/union.png";
 import { useEffect, useState } from "react";
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function Navbar({ handleSigninClick, layout, username, isLoggedIn }) {
+  const { currentUser } = useContext(CurrentUserContext);
   // const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
@@ -45,7 +48,7 @@ function Navbar({ handleSigninClick, layout, username, isLoggedIn }) {
 
                 <div className="navbar__user-button-elements">
                   <p className="navbar__user-button-text_saved-news"></p>
-                  {username || "User"}
+                  {currentUser.name || "User"}
                   <img
                     src={union}
                     alt=""
@@ -74,7 +77,7 @@ function Navbar({ handleSigninClick, layout, username, isLoggedIn }) {
                 className="navbar__user-rectangle"
               />
               <p className="navbar__user-button-username">
-                {username || "User"}
+                {currentUser.name || "User"}
               </p>
             </button>
           </div>
