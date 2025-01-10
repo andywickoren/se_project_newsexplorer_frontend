@@ -3,11 +3,11 @@ import NavBar from "../Navbar/Navbar";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import NewsCardList from "../NewsCardList/NewsCardList";
 
-function SavedNews({ newsCards }) {
+function SavedNews({ newsCards, keywords }) {
   return (
     <>
       <NavBar />
-      <SavedNewsHeader />
+      <SavedNewsHeader keywords={keywords} />
       <NewsCardList newsCards={newsCards}></NewsCardList>
     </>
   );

@@ -1,7 +1,7 @@
 import "./SearchForm.css";
 import { useState } from "react";
 
-function SearchForm({ onSearch }) {
+function SearchForm({ onSearch, setKeywords }) {
   const [query, setQuery] = useState("");
 
   const handleChange = (e) => {
@@ -11,6 +11,15 @@ function SearchForm({ onSearch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch(query);
+
+    const newKeywords = query.trim().split(/\s+/);
+
+    setKeywords((prevKeywords) => {
+      const uniqueKeywords = newKeywords.filter(
+        (word) => !prevKeywords.includes(word)
+      );
+      return [...prevKeywords, ...uniqueKeywords];
+    });
   };
 
   return (

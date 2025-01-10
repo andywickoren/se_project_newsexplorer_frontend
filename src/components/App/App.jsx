@@ -24,6 +24,7 @@ function App() {
   const [hasNoResults, setHasNoResults] = useState(false);
   const [token, setToken] = useState("");
   const [currentUser, setCurrentUser] = useState("");
+  const [keywords, setKeywords] = useState([]);
 
   const location = useLocation();
 
@@ -88,13 +89,13 @@ function App() {
   }, []);
 
   const handleSearch = (query) => {
+    console.log("handleSearch", query);
     setIsLoading(true);
     getItems(query)
       .then((data) => {
-        console.log(
-          "is data.articles and array?",
-          Array.isArray(data.articles)
-        );
+        // console.log(
+        //   Array.isArray(data.articles)
+        // );
         if (!data.articles || data.articles.length === 0) {
           console.log("no articles found");
           setHasNoResults(true);
@@ -106,6 +107,7 @@ function App() {
             date: article.publishedAt,
             description: article.content,
             author: article.author,
+            query,
           }))
         );
       })
@@ -159,6 +161,10 @@ function App() {
     console.log("you submitted bro");
   }
 
+  console.log(keywords);
+
+  console.log(newsCards);
+
   return (
     <LayoutContext.Provider value={layout}>
       <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
@@ -174,6 +180,7 @@ function App() {
                       handleSigninClick={handleSigninClick}
                       handleSearch={handleSearch}
                       isLoggedIn={isLoggedIn}
+                      setKeywords={setKeywords}
                     ></Header>
                     {(isLoading || hasNoResults || newsCards.length > 0) && (
                       <Main
@@ -190,7 +197,12 @@ function App() {
               />
               <Route
                 path="/saved-news"
-                element={<SavedNews newsCards={newsCards}></SavedNews>}
+                element={
+                  <SavedNews
+                    newsCards={newsCards}
+                    keywords={keywords}
+                  ></SavedNews>
+                }
               />
             </Routes>
 

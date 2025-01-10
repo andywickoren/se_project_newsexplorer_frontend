@@ -3,7 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import SearchForm from "../SearchForm/SearchForm";
 import headerBackground from "../../assets/header-background.png";
 
-function Header({ handleSigninClick, handleSearch, isLoggedIn }) {
+function Header({ handleSigninClick, handleSearch, isLoggedIn, setKeywords }) {
   const layout = "Home";
   return (
     <header
@@ -21,7 +21,10 @@ function Header({ handleSigninClick, handleSearch, isLoggedIn }) {
           Find the latest news on any topic and save them on your personal
           account.
         </p>
-        <SearchForm onSearch={handleSearch}></SearchForm>
+        <SearchForm
+          onSearch={handleSearch}
+          setKeywords={setKeywords}
+        ></SearchForm>
       </div>
     </header>
   );

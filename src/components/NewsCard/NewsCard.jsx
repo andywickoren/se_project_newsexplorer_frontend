@@ -9,7 +9,7 @@ import { useLayout } from "../../contexts/LayoutContext";
 import trashIcon from "../../assets/trash-icon.png";
 import trashHover from "../../assets/trash-hover.png";
 
-function NewsCard({ name, date, url, description, author }) {
+function NewsCard({ name, date, url, description, author, query }) {
   const layout = useLayout();
   console.log("NewsCard Layout: ==========> ", layout);
   const { savedCards, setSavedCards } = useContext(SavedCardsContext);
@@ -22,7 +22,7 @@ function NewsCard({ name, date, url, description, author }) {
     if (!isSaved) {
       setSavedCards([
         ...savedCards,
-        { uniqueKey, name, date, url, description, author },
+        { uniqueKey, name, date, url, description, author, query },
       ]);
     } else {
       setSavedCards(savedCards.filter((card) => card.uniqueKey !== uniqueKey));

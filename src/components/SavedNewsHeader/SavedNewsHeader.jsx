@@ -1,15 +1,34 @@
 import "./SavedNewsHeader.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
+import SavedCardsContext from "../../contexts/SavedCardsContext";
 
 function SavedNewsHeader() {
   const { currentUser } = useContext(CurrentUserContext);
-  console.log(currentUser);
+  const { savedCards } = useContext(SavedCardsContext);
+
+  const extractKeywords = (cards) => {
+    console.log(cards);
+    const allKeywords = cards
+      .flatMap((card) => card.query.split(/\s+/))
+      .filter((word, index, arr) => arr.indexOf(word) === index);
+    return allKeywords;
+  };
+
+  const formatKeywords = (keywords) => {
+    if (keywords.length === 0) return "No Searches Yet";
+    if (keywords.length === 1) return keywords[0];
+    const [first, second, ...rest] = keywords;
+    return `${first}, ${second}, and ${rest.length} others`;
+  };
+
+  const keywords = extractKeywords(savedCards);
+
   return (
     <div className="saved-news-header">
       <p className="saved-news-header__label">Saved articles</p>
       <h2 className="saved-news-header__title">
-        {currentUser.name}, you have 5 saved articles
+        {currentUser.name}, you have {savedCards.length} saved articles
       </h2>
       <p
         className="saved-news-header__caption"
@@ -19,7 +38,7 @@ function SavedNewsHeader() {
       >
         By keywords:{" "}
         <span className="saved-news-header__keywords">
-          Nature, Yellowstone, and 2 others{" "}
+          {formatKeywords(keywords)}
         </span>
       </p>
     </div>
