@@ -3,28 +3,71 @@ import "./NewsCard.css";
 import bookmarkContainer from "../../assets/bookmark-container.png";
 import bookmarkUnmarked from "../../assets/bookmark-unmarked.png";
 import bookmarkMarked from "../../assets/bookmark-marked.png";
+import { useContext } from "react";
+import SavedCardsContext from "../../contexts/SavedCardsContext";
+import { useLayout } from "../../contexts/LayoutContext";
+import trashIcon from "../../assets/trash-icon.png";
+import trashHover from "../../assets/trash-hover.png";
 
 function NewsCard({ name, date, url, description, author }) {
-  const [isSaved, setisSaved] = useState(true);
+  const layout = useLayout();
+  console.log("NewsCard Layout: ==========> ", layout);
+  const { savedCards, setSavedCards } = useContext(SavedCardsContext);
+  const uniqueKey = `${url}-${description.slice(0, 20)}`;
+  //this unique key property will be added to the savedCards so we can perform the check because the
+  //api doesn't give a good id property; the id property is often basic word and the other properties could conceivably have duplicates as well
+  const isSaved = savedCards.some((card) => card.uniqueKey === uniqueKey);
 
-  // const formatDate = (dateString) => {
-  //   const date = new Date(dateString);
-  //   return new Intl.DateTimeFormat("en-US", {
-  //     month: "long",
-  //     day: "numeric",
-  //     year: "numeric",
-  //   }).format(date);
-  // };
+  function handleSave() {
+    if (!isSaved) {
+      setSavedCards([
+        ...savedCards,
+        { uniqueKey, name, date, url, description, author },
+      ]);
+    } else {
+      setSavedCards(savedCards.filter((card) => card.uniqueKey !== uniqueKey));
+    }
+  }
 
   return (
     <div className="newsCard__container">
       <div className="newsCard__image-container">
-        <img src={url} alt="" className="newsCard__image" />
-        <img className="newsCard__bookmark-container" src={bookmarkContainer} />
-        {!isSaved ? (
-          <img className="newsCard__bookmark_unmarked" src={bookmarkUnmarked} />
+        <img src={url} alt={name} className="newsCard__image" />
+        {layout === "SavedNews" ? (
+          <>
+            <div className="newsCard__label">
+              <p className="newsCard__keyword">Test</p>
+            </div>
+            <div className="newsCard__trash-container">
+              <img
+                src={trashIcon}
+                alt="trash icon"
+                className="newsCard__trash-icon"
+              />
+            </div>
+          </>
         ) : (
-          <img className="newsCard__bookmark_unmarked" src={bookmarkMarked} />
+          <>
+            <img
+              className="newsCard__bookmark-container"
+              src={bookmarkContainer}
+              alt={!isSaved ? "unsaved icon" : "saved icon"}
+            />
+
+            {!isSaved ? (
+              <img
+                className="newsCard__bookmark newsCard__bookmark_unmarked"
+                src={bookmarkUnmarked}
+                onClick={handleSave}
+              />
+            ) : (
+              <img
+                className="newsCard__bookmark newsCard__bookmark_marked"
+                src={bookmarkMarked}
+                onClick={handleSave}
+              />
+            )}
+          </>
         )}
       </div>
       <div className="newsCard__info">

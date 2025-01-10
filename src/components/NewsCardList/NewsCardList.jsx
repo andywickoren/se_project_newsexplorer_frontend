@@ -1,18 +1,19 @@
 import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
 import { useState } from "react";
+import { useContext } from "react";
+import SavedCardsContext from "../../contexts/SavedCardsContext";
+import { useLayout } from "../../contexts/LayoutContext";
 
-function NewsCardList({ newsCards, layout }) {
-  console.log(newsCards);
-  console.log("layout:  ===>", layout);
-  const [cardsToShow, setCardsToShow] = useState(3); // Initial number of cards to show
-
-  // Slice the newsCards array based on cardsToShow
+function NewsCardList({ newsCards }) {
+  const layout = useLayout();
+  // console.log(newsCards);
+  console.log("NewCard layout =======> ", layout);
+  const { savedCards, setSavedCards } = useContext(SavedCardsContext);
+  const [cardsToShow, setCardsToShow] = useState(3);
   const renderedCards = newsCards.slice(0, cardsToShow);
-
-  // Handle the "Show More" button click
   const handleShowMore = () => {
-    setCardsToShow((prevCount) => prevCount + 3); // Increment cardsToShow by 3
+    setCardsToShow((prevCount) => prevCount + 3);
   };
 
   return (
@@ -26,16 +27,28 @@ function NewsCardList({ newsCards, layout }) {
           layout === "SavedNews" ? "news-cards-list_saved-news" : ""
         }`}
       >
-        {renderedCards.map((card) => (
-          <NewsCard
-            name={card.name}
-            url={card.imageUrl}
-            key={card.name}
-            description={card.description}
-            date={card.publishedAt}
-            author={card.author}
-          />
-        ))}
+        {layout === "SavedNews"
+          ? savedCards.map((card) => (
+              <NewsCard
+                name={card.name}
+                url={card.url}
+                key={card.name}
+                description={card.description}
+                date={card.date}
+                author={card.author}
+                layout="SavedNews"
+              />
+            ))
+          : renderedCards.map((card) => (
+              <NewsCard
+                name={card.name}
+                url={card.imageUrl}
+                key={card.name}
+                description={card.description}
+                date={card.publishedAt}
+                author={card.author}
+              />
+            ))}
       </ul>
       {layout !== "SavedNews" && (
         <div className="news-cards__show-more-button-container">

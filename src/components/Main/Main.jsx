@@ -12,13 +12,12 @@ function Main({
   isLoading,
   noResults,
 }) {
-  const layout = "Home";
   return (
     // !isLoading && ()
     <div className={`main ${isLoading && "main__is-loading"}`}>
       <Results
         newsCards={newsCards}
-        layout={layout}
+        // layout={layout}
         isLoading={isLoading}
         noResults={noResults}
       />

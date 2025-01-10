@@ -7,8 +7,11 @@ import union from "../../assets/union.png";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
+import { useLayout } from "../../contexts/LayoutContext";
 
-function Navbar({ handleSigninClick, layout, username, isLoggedIn }) {
+function Navbar({ handleSigninClick, isLoggedIn }) {
+  const layout = useLayout();
+  console.log("Navbar Layout: =============>>", layout);
   const { currentUser } = useContext(CurrentUserContext);
   // const [isLoggedIn, setIsLoggedIn] = useState(true);
 

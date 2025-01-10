@@ -11,6 +11,9 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import ConfirmRegisterModal from "../ConfirmRegisterModal/ConfirmRegisterModal";
 import { getItems } from "../../utils/api";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
+import SavedCardsContext from "../../contexts/SavedCardsContext";
+import { LayoutContext } from "../../contexts/LayoutContext";
+import { useLocation } from "react-router-dom";
 import Results from "../Results/Results";
 
 function App() {
@@ -22,6 +25,10 @@ function App() {
   const [token, setToken] = useState("");
   const [currentUser, setCurrentUser] = useState("");
 
+  const location = useLocation();
+
+  const layout = location.pathname === "/saved-news" ? "SavedNews" : "Home";
+
   // const apiKey = "460e8a428e8641e6b8648d256f9a2375";
 
   const mockUser = {
@@ -30,6 +37,8 @@ function App() {
     password: "password123",
     name: "Irene",
   };
+
+  const [savedCards, setSavedCards] = useState([]);
 
   function login(email, password) {
     if (email === mockUser.email && password === mockUser.password) {
@@ -151,62 +160,67 @@ function App() {
   }
 
   return (
-    <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
-      <div className="app">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Header
-                  handleSigninClick={handleSigninClick}
-                  handleSearch={handleSearch}
-                  isLoggedIn={isLoggedIn}
-                ></Header>
-                {(isLoading || hasNoResults || newsCards.length > 0) && (
-                  <Main
-                    // handleSearch={handleSearch}
-                    newsCards={newsCards}
-                    // handleSigninClick={handleSigninClick}
-                    isLoading={isLoading}
-                    noResults={hasNoResults}
-                  />
-                )}
-                <About></About>
-              </>
-            }
-          />
-          <Route
-            path="/saved-news"
-            element={<SavedNews newsCards={newsCards}></SavedNews>}
-          />
-        </Routes>
+    <LayoutContext.Provider value={layout}>
+      <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
+        <SavedCardsContext.Provider value={{ savedCards, setSavedCards }}>
+          <div className="app">
+            <Routes>
+              <Route
+                path="/"
+                //could I somehow put my layout prop here instead of papssing it as
+                element={
+                  <>
+                    <Header
+                      handleSigninClick={handleSigninClick}
+                      handleSearch={handleSearch}
+                      isLoggedIn={isLoggedIn}
+                    ></Header>
+                    {(isLoading || hasNoResults || newsCards.length > 0) && (
+                      <Main
+                        // handleSearch={handleSearch}
+                        newsCards={newsCards}
+                        // handleSigninClick={handleSigninClick}
+                        isLoading={isLoading}
+                        noResults={hasNoResults}
+                      />
+                    )}
+                    <About></About>
+                  </>
+                }
+              />
+              <Route
+                path="/saved-news"
+                element={<SavedNews newsCards={newsCards}></SavedNews>}
+              />
+            </Routes>
 
-        <Footer></Footer>
-        {activeModal === "signin-modal" && (
-          <SigninModal
-            onLogin={onLogin}
-            handleCloseClick={closeActiveModal}
-            isOpen={activeModal === "signin-modal"}
-            openRegisterModal={handleSignupClick}
-          ></SigninModal>
-        )}
-        {activeModal === "register-modal" && (
-          <RegisterModal
-            handleSignup={handleSignup}
-            handleCloseClick={closeActiveModal}
-            isOpen={activeModal === "register-modal"}
-            openSigninModal={handleSigninClick}
-          ></RegisterModal>
-        )}
-        {activeModal === "confirm-register-modal" && (
-          <ConfirmRegisterModal
-            openSigninModal={handleSigninClick}
-            handleCloseClick={closeActiveModal}
-          ></ConfirmRegisterModal>
-        )}
-      </div>
-    </CurrentUserContext.Provider>
+            <Footer></Footer>
+            {activeModal === "signin-modal" && (
+              <SigninModal
+                onLogin={onLogin}
+                handleCloseClick={closeActiveModal}
+                isOpen={activeModal === "signin-modal"}
+                openRegisterModal={handleSignupClick}
+              ></SigninModal>
+            )}
+            {activeModal === "register-modal" && (
+              <RegisterModal
+                handleSignup={handleSignup}
+                handleCloseClick={closeActiveModal}
+                isOpen={activeModal === "register-modal"}
+                openSigninModal={handleSigninClick}
+              ></RegisterModal>
+            )}
+            {activeModal === "confirm-register-modal" && (
+              <ConfirmRegisterModal
+                openSigninModal={handleSigninClick}
+                handleCloseClick={closeActiveModal}
+              ></ConfirmRegisterModal>
+            )}
+          </div>
+        </SavedCardsContext.Provider>
+      </CurrentUserContext.Provider>
+    </LayoutContext.Provider>
   );
 }
 
