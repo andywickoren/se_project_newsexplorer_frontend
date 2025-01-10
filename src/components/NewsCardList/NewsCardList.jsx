@@ -37,7 +37,7 @@ function NewsCardList({ newsCards }) {
                 date={card.date}
                 author={card.author}
                 layout="SavedNews"
-                query={query}
+                query={card.query}
               />
             ))
           : renderedCards.map((card) => (
@@ -48,7 +48,7 @@ function NewsCardList({ newsCards }) {
                 description={card.description}
                 date={card.publishedAt}
                 author={card.author}
-                // query={query}
+                query={card.query}
               />
             ))}
       </ul>

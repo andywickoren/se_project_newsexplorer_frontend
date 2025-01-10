@@ -8,7 +8,6 @@ function SavedNewsHeader() {
   const { savedCards } = useContext(SavedCardsContext);
 
   const extractKeywords = (cards) => {
-    console.log(cards);
     const allKeywords = cards
       .flatMap((card) => card.query.split(/\s+/))
       .filter((word, index, arr) => arr.indexOf(word) === index);
