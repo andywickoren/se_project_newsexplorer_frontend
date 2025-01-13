@@ -16,14 +16,14 @@
 
 .modal__content {
   background-color: #fff;
-  /* background-color: aliceblue; */
-  position: relative;
   padding: 34px 36px 28px 36px;
   max-width: 360px;
   box-sizing: border-box;
   width: 100%;
   border-radius: 20px;
+  position: relative;
 }
+
 .modal__close {
   position: absolute;
   bottom: 0;
@@ -62,6 +62,40 @@
   line-height: 17px;
   margin-bottom: 31px;
   margin-top: 9px;
+}
+
+.modal__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.modal__error-message {
+  color: #ff0000;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  top: 55px;
+}
+
+.modal__error-message_register-error {
+  color: #ff0000;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.modal__error-message-login-error {
+  color: #ff0000;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 8px;
 }
 
 .modal__buttons-wrapper {

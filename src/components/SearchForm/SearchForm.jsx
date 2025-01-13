@@ -3,37 +3,46 @@ import { useState } from "react";
 
 function SearchForm({ onSearch, setKeywords }) {
   const [query, setQuery] = useState("");
+  const [searchError, setSearchError] = useState("");
 
   const handleChange = (e) => {
     setQuery(e.target.value);
+    setSearchError("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSearch(query);
+    if (query === "") {
+      setSearchError("Please enter a keyword");
+    } else {
+      onSearch(query);
 
-    const newKeywords = query.trim().split(/\s+/);
+      const newKeywords = query.trim().split(/\s+/);
 
-    setKeywords((prevKeywords) => {
-      const uniqueKeywords = newKeywords.filter(
-        (word) => !prevKeywords.includes(word)
-      );
-      return [...prevKeywords, ...uniqueKeywords];
-    });
+      setKeywords((prevKeywords) => {
+        const uniqueKeywords = newKeywords.filter(
+          (word) => !prevKeywords.includes(word)
+        );
+        return [...prevKeywords, ...uniqueKeywords];
+      });
+    }
   };
 
   return (
     <form className="search-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="search-form__input"
-        placeholder="Enter topic"
-        aria-label="Search topics"
-        onChange={handleChange}
-      />
-      <button type="submit" className="search-form__button">
-        Submit
-      </button>
+      <div className="modal__input-wrapper">
+        <input
+          type="text"
+          className="search-form__input"
+          placeholder="Enter topic"
+          aria-label="Search topics"
+          onChange={handleChange}
+        />
+        <span className="search-form__error-message">{searchError}</span>
+        <button type="submit" className="search-form__button">
+          Submit
+        </button>
+      </div>
     </form>
   );
 }

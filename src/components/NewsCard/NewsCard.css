@@ -26,6 +26,11 @@
 }
 
 .newsCard__label {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
   height: 40px;
   padding: 0 22px;
   background-color: #fff;
@@ -34,9 +39,44 @@
   top: 0;
   left: 0;
   margin: 24px;
+  max-width: 180px;
+}
+
+/* .container {
+  display: flex;
+  height: 42px;
+} */
+
+.newsCard__label_delete {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 22px;
+  margin: 24px;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  left: 101px;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.newsCard__label_delete_on-trash-hover {
+  display: block;
+  opacity: 1;
+}
+
+.newsCard__keyword_on-trash-hover {
+  max-width: 50px;
 }
 
 .newsCard__trash-container {
+  display: flex;
+  align-items: center;
   height: 40px;
   padding: 0 22px;
   background-color: #fff;
@@ -47,6 +87,10 @@
   margin: 24px;
   cursor: pointer;
 }
+/* .newsCard__trash-container:hover + .newsCard__label_delete {
+  display: block;
+  opacity: 1;
+} */
 
 .newsCard__trash-icon:hover {
   content: url("../../assets/trash-hover.png");

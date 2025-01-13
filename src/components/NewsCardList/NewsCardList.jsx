@@ -15,6 +15,9 @@ function NewsCardList({ newsCards }) {
   const handleShowMore = () => {
     setCardsToShow((prevCount) => prevCount + 3);
   };
+  const handleDelete = (uniqueKey) => {
+    setSavedCards(savedCards.filter((card) => card.uniqueKey !== uniqueKey));
+  };
 
   return (
     <div className="news-cards">
@@ -38,6 +41,7 @@ function NewsCardList({ newsCards }) {
                 author={card.author}
                 layout="SavedNews"
                 query={card.query}
+                handleDelete={handleDelete}
               />
             ))
           : renderedCards.map((card) => (

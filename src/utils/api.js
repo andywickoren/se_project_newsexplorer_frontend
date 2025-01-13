@@ -23,3 +23,32 @@ export function getItems(query) {
 
   return fetch(url).then(checkResponse);
 }
+
+export function simulateApiEmailCheck(email) {
+  return new Promise((resolve, reject) => {
+    if (email === "email@gmail.com") {
+      reject(new Error("This email is not available"));
+    } else {
+      resolve();
+    }
+  });
+}
+
+export function simulateApiLoginCheck({ email, password }) {
+  const mockUser = {
+    email: "email@gmail.com",
+    username: "testuser",
+    password: "password123",
+    name: "Irene",
+  };
+
+  return new Promise((resolve, reject) => {
+    if (email !== mockUser.email) {
+      reject(new Error("Invalid email"));
+    } else if (password !== mockUser.password) {
+      reject(new Error("Invalid password"));
+    } else {
+      resolve(mockUser);
+    }
+  });
+}

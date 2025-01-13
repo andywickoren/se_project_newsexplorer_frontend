@@ -9,7 +9,15 @@ import { useLayout } from "../../contexts/LayoutContext";
 import trashIcon from "../../assets/trash-icon.png";
 import trashHover from "../../assets/trash-hover.png";
 
-function NewsCard({ name, date, url, description, author, query }) {
+function NewsCard({
+  name,
+  date,
+  url,
+  description,
+  author,
+  query,
+  handleDelete,
+}) {
   const layout = useLayout();
   console.log("NewsCard Layout: ==========> ", layout);
   const { savedCards, setSavedCards } = useContext(SavedCardsContext);
@@ -17,6 +25,7 @@ function NewsCard({ name, date, url, description, author, query }) {
   //this unique key property will be added to the savedCards so we can perform the check because the
   //api doesn't give a good id property; the id property is often basic word and the other properties could conceivably have duplicates as well
   const isSaved = savedCards.some((card) => card.uniqueKey === uniqueKey);
+  const [isHovered, setIsHovered] = useState(false);
 
   function handleSave() {
     if (!isSaved) {
@@ -36,14 +45,34 @@ function NewsCard({ name, date, url, description, author, query }) {
         {layout === "SavedNews" ? (
           <>
             <div className="newsCard__label">
-              <p className="newsCard__keyword">Test</p>
+              <p
+                className={`newsCard__keyword ${
+                  isHovered ? "newsCard__keyword_on-trash-hover" : ""
+                }`}
+              >
+                {query.charAt(0).toUpperCase() + query.slice(1)}
+              </p>
             </div>
-            <div className="newsCard__trash-container">
+            <div
+              className="newsCard__trash-container"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
               <img
                 src={trashIcon}
                 alt="trash icon"
                 className="newsCard__trash-icon"
+                onClick={() => handleDelete(uniqueKey)}
               />
+            </div>
+            <div
+              className={`newsCard__label_delete ${
+                isHovered ? "newsCard__label_delete_on-trash-hover" : ""
+              }`}
+            >
+              <p className="newsCard__label_delete-warning">
+                Remove from saved
+              </p>
             </div>
           </>
         ) : (

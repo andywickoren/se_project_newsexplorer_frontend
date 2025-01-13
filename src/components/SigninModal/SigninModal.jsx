@@ -2,16 +2,33 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./SigninModal.css";
 import { useState } from "react";
+import { simulateApiLoginCheck } from "../../utils/api";
 
 function SigninModal({ openRegisterModal, onLogin, handleCloseClick, isOpen }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const title = "Sign in";
+  const otherBackendErrors = "";
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const values = { email, password };
-    onLogin(values);
+    setEmailError("");
+    setPasswordError("");
+
+    simulateApiLoginCheck({ email, password })
+      .then((user) => {
+        onLogin(user);
+      })
+      .catch((error) => {
+        if (error.message === "Invalid email") {
+          setEmailError("Invalid email");
+        } else if (error.message === "Invalid password") {
+          setPasswordError("Invalid password");
+        }
+      });
   };
 
   return (
@@ -21,32 +38,45 @@ function SigninModal({ openRegisterModal, onLogin, handleCloseClick, isOpen }) {
       title={title}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="email" className="modal__label">
-        Email
-      </label>
-      <input
-        type="text"
-        className="modal__input"
-        id="email"
-        name="email"
-        placeholder="Email"
-        aria-label="Enter your email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <label htmlFor="password" className="modal__label">
-        Password
-      </label>
-      <input
-        type="password"
-        className="modal__input"
-        id="password"
-        name="password"
-        placeholder="Password"
-        aria-label="Enter your password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <div className="modal__input-wrapper">
+        <label htmlFor="email" className="modal__label">
+          Email
+        </label>
+        <input
+          type="email"
+          className="modal__input"
+          id="email"
+          name="email"
+          placeholder="Email"
+          aria-label="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <span className="modal__error-message modal__error-message_email">
+          {emailError}
+        </span>
+      </div>
+      <div className="modal__input-wrapper">
+        <label htmlFor="password" className="modal__label">
+          Password
+        </label>
+        <input
+          type="password"
+          className="modal__input"
+          id="password"
+          name="password"
+          placeholder="Password"
+          aria-label="Enter your password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <span className="modal__error-message modal__error-message_password">
+          {passwordError}
+        </span>
+      </div>
+      <span className="modal__error-message-login-error">
+        {otherBackendErrors}
+      </span>
       <div className="modal__buttons-wrapper">
         <button
           type="submit"
@@ -55,6 +85,7 @@ function SigninModal({ openRegisterModal, onLogin, handleCloseClick, isOpen }) {
         >
           Sign in
         </button>
+
         <button
           type="button"
           className="modal__or-signup-btn"

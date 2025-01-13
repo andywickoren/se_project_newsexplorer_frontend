@@ -7,10 +7,16 @@ function SavedNewsHeader() {
   const { currentUser } = useContext(CurrentUserContext);
   const { savedCards } = useContext(SavedCardsContext);
 
+  const capitalizeFirstLetter = (str) => {
+    if (!str) return "";
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
+
   const extractKeywords = (cards) => {
     const allKeywords = cards
       .flatMap((card) => card.query.split(/\s+/))
-      .filter((word, index, arr) => arr.indexOf(word) === index);
+      .filter((word, index, arr) => arr.indexOf(word) === index)
+      .map(capitalizeFirstLetter);
     return allKeywords;
   };
 

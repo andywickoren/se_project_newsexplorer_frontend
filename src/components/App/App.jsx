@@ -78,6 +78,13 @@ function App() {
     }
   };
 
+  function onLogout() {
+    setCurrentUser("");
+    setIsLoggedIn(false);
+    localStorage.setItem("token", "");
+    setToken("");
+  }
+
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
@@ -206,7 +213,7 @@ function App() {
               />
             </Routes>
 
-            <Footer></Footer>
+            <Footer logout={onLogout}></Footer>
             {activeModal === "signin-modal" && (
               <SigninModal
                 onLogin={onLogin}
