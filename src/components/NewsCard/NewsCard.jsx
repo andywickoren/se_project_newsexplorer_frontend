@@ -17,6 +17,7 @@ function NewsCard({
   author,
   query,
   handleDelete,
+  isLoggedIn,
 }) {
   const layout = useLayout();
   console.log("NewsCard Layout: ==========> ", layout);
@@ -42,61 +43,73 @@ function NewsCard({
     <div className="newsCard__container">
       <div className="newsCard__image-container">
         <img src={url} alt={name} className="newsCard__image" />
-        {layout === "SavedNews" ? (
-          <>
-            <div className="newsCard__label">
-              <p
-                className={`newsCard__keyword ${
-                  isHovered ? "newsCard__keyword_on-trash-hover" : ""
+
+        {isLoggedIn ? (
+          layout === "SavedNews" ? (
+            <>
+              <div className="newsCard__label">
+                <p
+                  className={`newsCard__keyword ${
+                    isHovered ? "newsCard__keyword_on-trash-hover" : ""
+                  }`}
+                >
+                  {query.charAt(0).toUpperCase() + query.slice(1)}
+                </p>
+              </div>
+              <div
+                className="newsCard__trash-container"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                <img
+                  src={trashIcon}
+                  alt="trash icon"
+                  className="newsCard__trash-icon"
+                  onClick={() => handleDelete(uniqueKey)}
+                />
+              </div>
+              <div
+                className={`newsCard__label_delete ${
+                  isHovered ? "newsCard__label_delete_on-trash-hover" : ""
                 }`}
               >
-                {query.charAt(0).toUpperCase() + query.slice(1)}
-              </p>
-            </div>
-            <div
-              className="newsCard__trash-container"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
+                <p className="newsCard__label_delete-warning">
+                  Remove from saved
+                </p>
+              </div>
+            </>
+          ) : (
+            <>
               <img
-                src={trashIcon}
-                alt="trash icon"
-                className="newsCard__trash-icon"
-                onClick={() => handleDelete(uniqueKey)}
+                className="newsCard__bookmark-container"
+                src={bookmarkContainer}
+                alt={!isSaved ? "unsaved icon" : "saved icon"}
               />
-            </div>
-            <div
-              className={`newsCard__label_delete ${
-                isHovered ? "newsCard__label_delete_on-trash-hover" : ""
-              }`}
-            >
-              <p className="newsCard__label_delete-warning">
-                Remove from saved
-              </p>
-            </div>
-          </>
+              {!isSaved ? (
+                <img
+                  className="newsCard__bookmark newsCard__bookmark_unmarked"
+                  src={bookmarkUnmarked}
+                  onClick={handleSave}
+                />
+              ) : (
+                <img
+                  className="newsCard__bookmark newsCard__bookmark_marked"
+                  src={bookmarkMarked}
+                  onClick={handleSave}
+                />
+              )}
+            </>
+          )
         ) : (
-          <>
+          <div className="newsCard__bookmark-container">
             <img
-              className="newsCard__bookmark-container"
-              src={bookmarkContainer}
-              alt={!isSaved ? "unsaved icon" : "saved icon"}
+              className="newsCard__bookmark newsCard__bookmark_unmarked"
+              src={bookmarkUnmarked}
+              alt="bookmark unmarked"
             />
-
-            {!isSaved ? (
-              <img
-                className="newsCard__bookmark newsCard__bookmark_unmarked"
-                src={bookmarkUnmarked}
-                onClick={handleSave}
-              />
-            ) : (
-              <img
-                className="newsCard__bookmark newsCard__bookmark_marked"
-                src={bookmarkMarked}
-                onClick={handleSave}
-              />
-            )}
-          </>
+            {/* <div className="newsCard__login-message">Sign in to save</div> */}
+            {/* </div> */}
+          </div>
         )}
       </div>
       <div className="newsCard__info">

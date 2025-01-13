@@ -5,7 +5,7 @@ import { useContext } from "react";
 import SavedCardsContext from "../../contexts/SavedCardsContext";
 import { useLayout } from "../../contexts/LayoutContext";
 
-function NewsCardList({ newsCards }) {
+function NewsCardList({ newsCards, isLoggedIn }) {
   const layout = useLayout();
   // console.log(newsCards);
   console.log("NewCard layout =======> ", layout);
@@ -42,6 +42,7 @@ function NewsCardList({ newsCards }) {
                 layout="SavedNews"
                 query={card.query}
                 handleDelete={handleDelete}
+                isLoggedIn={isLoggedIn}
               />
             ))
           : renderedCards.map((card) => (

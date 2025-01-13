@@ -196,6 +196,7 @@ function App() {
                         // handleSigninClick={handleSigninClick}
                         isLoading={isLoading}
                         noResults={hasNoResults}
+                        isLoggedIn={isLoggedIn}
                       />
                     )}
                     <About></About>

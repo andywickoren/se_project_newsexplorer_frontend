@@ -11,6 +11,7 @@ function Main({
   handleSearch,
   isLoading,
   noResults,
+  isLoggedIn,
 }) {
   return (
     // !isLoading && ()
@@ -20,6 +21,7 @@ function Main({
         // layout={layout}
         isLoading={isLoading}
         noResults={noResults}
+        isLoggedIn={isLoggedIn}
       />
     </div>
   );

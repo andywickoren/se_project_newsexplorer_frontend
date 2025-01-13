@@ -3,7 +3,7 @@ import Preloader from "../Preloader/Preloader";
 import NoResults from "../NoResults/NoResults";
 import "./Results.css";
 
-function Results({ newsCards, isLoading, noResults }) {
+function Results({ newsCards, isLoading, noResults, isLoggedIn }) {
   let content = null;
 
   if (isLoading) {
@@ -21,7 +21,7 @@ function Results({ newsCards, isLoading, noResults }) {
   } else if (newsCards.length > 0) {
     content = (
       <div className="results__news-cards">
-        <NewsCardList newsCards={newsCards} />
+        <NewsCardList isLoggedIn={isLoggedIn} newsCards={newsCards} />
       </div>
     );
   }
