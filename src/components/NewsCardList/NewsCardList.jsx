@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useContext } from "react";
 import SavedCardsContext from "../../contexts/SavedCardsContext";
 import { useLayout } from "../../contexts/LayoutContext";
+import NewsCardLoggedIn from "../NewsCardLoggedIn/NewsCardLoggedIn";
+// import NewsCardSaved from "../NewsCardSaved/NewsCardSaved";
 
 function NewsCardList({ newsCards, isLoggedIn }) {
   const layout = useLayout();
@@ -31,22 +33,23 @@ function NewsCardList({ newsCards, isLoggedIn }) {
         }`}
       >
         {layout === "SavedNews"
-          ? savedCards.map((card) => (
-              <NewsCard
-                name={card.name}
-                url={card.url}
-                key={card.name}
-                description={card.description}
-                date={card.date}
-                author={card.author}
-                layout="SavedNews"
-                query={card.query}
-                handleDelete={handleDelete}
-                isLoggedIn={isLoggedIn}
-              />
-            ))
-          : renderedCards.map((card) => (
-              <NewsCard
+          ? console.log("Saved News: ", savedCards)
+          : // ? savedCards.map((card) => (
+            //   <NewsCardSaved
+            //     name={card.name}
+            //     url={card.url}
+            //     key={card.name}
+            //     description={card.description}
+            //     date={card.date}
+            //     author={card.author}
+            //     layout="SavedNews"
+            //     query={card.query}
+            //     handleDelete={handleDelete}
+            //     isLoggedIn={isLoggedIn}
+            //   />
+            // ))
+            renderedCards.map((card) => (
+              <NewsCardLoggedIn
                 name={card.name}
                 url={card.imageUrl}
                 key={card.name}
