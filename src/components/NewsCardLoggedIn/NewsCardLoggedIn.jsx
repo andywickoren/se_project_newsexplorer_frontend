@@ -46,7 +46,7 @@ function NewsCardLoggedIn({ name, url, description, date, author, query }) {
         <img
           className="newsCard__bookmark newsCard__bookmark_marked"
           src={bookmarkMarked}
-          onClick={handleSave()}
+          onClick={handleSave}
         />
       )}
     </NewsCard>
