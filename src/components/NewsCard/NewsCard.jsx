@@ -8,7 +8,7 @@ import trashIcon from "../../assets/trash-icon.png";
 import trashHover from "../../assets/trash-hover.png";
 
 function NewsCard({ name, url, date, description, author, children }) {
-  const uniqueKey = `${url}-${description.slice(0, 20)}`;
+  const uniqueKey = url;
   //this unique key property will be added to the savedCards so we can perform the check because the
   //api doesn't give a good id property; the id property is often basic word and the other properties could conceivably have duplicates as well
   // const isSaved = savedCards.some((card) => card.uniqueKey === uniqueKey);

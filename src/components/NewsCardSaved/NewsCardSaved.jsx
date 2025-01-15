@@ -2,26 +2,35 @@ import { useState } from "react";
 import NewsCard from "../NewsCard/NewsCard";
 import trashIcon from "../../assets/trash-icon.png";
 import { useContext } from "react";
+import SavedCardsContext from "../../contexts/SavedCardsContext";
 
-function NewsCardSaved(
-  {
-    //   name,
-    //   url,
-    //   description,
-    //   date,
-    //   author,
-    //   layout,
-    //   query,
-    //   handleDelete,
-    //   isLoggedIn,
-  }
-) {
-  const uniqueKey = `${url}-${description.slice(0, 20)}`;
+function NewsCardSaved({
+  name,
+  url,
+  description,
+  date,
+  author,
+  layout,
+  query,
+  //   handleDelete,
+  isLoggedIn,
+}) {
+  const uniqueKey = url;
   const [isHovered, setIsHovered] = useState(false);
   const { savedCards, setSavedCards } = useContext(SavedCardsContext);
+  console.log("SAVEDCARDS: ", savedCards);
+  const handleDelete = (uniqueKey) => {
+    setSavedCards(savedCards.filter((card) => card.uniqueKey !== uniqueKey));
+  };
 
   return (
-    <NewsCard name={name} url={url} date={date} author={author}>
+    <NewsCard
+      name={name}
+      url={url}
+      date={date}
+      author={author}
+      description={description}
+    >
       <div className="newsCard__label">
         <p
           className={`newsCard__keyword ${
@@ -54,4 +63,4 @@ function NewsCardSaved(
   );
 }
 
-export default NewsCardSaved();
+export default NewsCardSaved;

@@ -42,6 +42,17 @@
   align-items: center;
 }
 
+.navnar__menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px; /* Adjust width as needed */
+  height: 18px; /* Adjust height as needed */
+  background: transparent; /* Ensure transparency */
+  border: none;
+  cursor: pointer;
+}
+
 .navbar__home-button {
   margin-right: 76px;
   /* cursor: pointer; */
@@ -155,4 +166,18 @@
   align-self: center;
   position: absolute;
   color: black;
+}
+
+@media (max-width: 1025px) {
+  .navbar {
+    height: 66px;
+  }
+
+  .navbar__home-button {
+    height: 66px;
+  }
+
+  .navbar__saved-articles-text {
+    height: 66px;
+  }
 }

@@ -16,15 +16,19 @@ function Header({ handleSigninClick, handleSearch, isLoggedIn, setKeywords }) {
         isLoggedIn={isLoggedIn}
       ></Navbar>
       <div className="header__content">
-        <h1 className="header__title">What's going on in the world?</h1>
-        <p className="header__caption">
-          Find the latest news on any topic and save them on your personal
-          account.
-        </p>
-        <SearchForm
-          onSearch={handleSearch}
-          setKeywords={setKeywords}
-        ></SearchForm>
+        <div className="header__title_wrapper">
+          <h1 className="header__title">What's going on in the world?</h1>
+          <p className="header__caption">
+            Find the latest news on any topic and save them on your personal
+            account.
+          </p>
+        </div>
+        <div className="header__search-form">
+          <SearchForm
+            onSearch={handleSearch}
+            setKeywords={setKeywords}
+          ></SearchForm>
+        </div>
       </div>
     </header>
   );

@@ -9,7 +9,7 @@ import NewsCard from "../NewsCard/NewsCard";
 function NewsCardLoggedIn({ name, url, description, date, author, query }) {
   const { savedCards, setSavedCards } = useContext(SavedCardsContext);
   console.log(savedCards);
-  const uniqueKey = `${url}-${description.slice(0, 20)}`;
+  const uniqueKey = url;
   const isSaved = savedCards.some((card) => card.uniqueKey === uniqueKey);
 
   const handleSave = () => {

@@ -49,8 +49,17 @@
   position: relative;
 }
 @media (max-width: 1025px) {
+  .news-cards__heading {
+    margin-top: 8px;
+    margin-bottom: 32px;
+  }
   .news-card-list {
     gap: 10px;
+  }
+
+  .news-cards__show-more-button {
+    margin-top: 16px;
+    margin-bottom: 5px;
   }
 }
 

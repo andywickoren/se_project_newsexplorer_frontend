@@ -140,6 +140,10 @@
   word-wrap: break-word;
 }
 
+.newsCard__details {
+  height: 0;
+}
+
 .newsCard__description {
   font-family: "Roboto", sans-serif;
   margin: 0 0 18px 0;
@@ -172,19 +176,9 @@
   .newsCard__info {
     padding: 16px;
   }
-}
 
-@media (max-width: 1025px) {
-  .newsCard__container {
-    height: 420px;
-    width: 224px;
-    border-radius: 25px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .newsCard__image-container {
-    height: 150px;
+  .newsCard__title {
+    font-size: 22px;
   }
 }
 

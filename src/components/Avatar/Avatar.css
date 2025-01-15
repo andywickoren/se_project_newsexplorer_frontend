@@ -5,3 +5,10 @@
   object-fit: cover;
   object-position: right;
 }
+
+@media (max-width: 1025px) {
+  .avatar {
+    width: 232px;
+    height: 232px;
+  }
+}

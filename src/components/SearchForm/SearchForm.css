@@ -53,3 +53,15 @@
   width: 100%;
   top: 71px;
 }
+
+@media (max-width: 1025px) {
+  .search-form {
+    width: 452px;
+    /* width: fit-content; */
+  }
+
+  .search-form__input {
+    width: 452px;
+    /* padding: 0; */
+  }
+}

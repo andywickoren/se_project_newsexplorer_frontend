@@ -96,25 +96,39 @@ function App() {
     }
   }, []);
 
+  const formatDate = (isoDateString) => {
+    const date = new Date(isoDateString);
+    return new Intl.DateTimeFormat("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    }).format(date);
+  };
+
+  const formatToUpperCase = (str) => {
+    return str ? str.toUpperCase() : "";
+  };
+
   const handleSearch = (query) => {
     console.log("handleSearch", query);
     setIsLoading(true);
     getItems(query)
       .then((data) => {
-        // console.log(
-        //   Array.isArray(data.articles)
-        // );
+        const filteredArticles = data.articles.filter(
+          (article) => article.content !== "[Removed]"
+        );
+
         if (!data.articles || data.articles.length === 0) {
           console.log("no articles found");
           setHasNoResults(true);
         }
         setNewsCards(
-          data.articles.map((article) => ({
+          filteredArticles.map((article) => ({
             name: article.title,
             imageUrl: article.urlToImage,
-            date: article.publishedAt,
+            date: formatDate(article.publishedAt),
             description: article.content,
-            author: article.author,
+            author: formatToUpperCase(article.source.name),
             query,
           }))
         );
