@@ -21,7 +21,7 @@
 }
 .navbar__link {
   display: contents;
-  text-decoration: none; /* Makes the <Link> element "invisible" to layout */
+  text-decoration: none;
 }
 
 .navbar__options {
@@ -42,13 +42,13 @@
   align-items: center;
 }
 
-.navnar__menu-icon {
+.navbar__menu-icon {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px; /* Adjust width as needed */
-  height: 18px; /* Adjust height as needed */
-  background: transparent; /* Ensure transparency */
+  width: 30px;
+  height: 18px;
+  background: transparent;
   border: none;
   cursor: pointer;
 }
@@ -78,7 +78,7 @@
 
 .navbar__user-button-elements p,
 .navbar__user-button-elements span {
-  font-weight: 500; /* Apply the font weight to text elements inside */
+  font-weight: 500;
 }
 
 .navbar__user-button-text_saved-news {
