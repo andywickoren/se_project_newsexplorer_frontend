@@ -1,6 +1,6 @@
 import userRectangle from "../../assets/user-rectangle.png";
 
-function SavedNews() {
+function NavbarSavedNews({ isLoggedIn }) {
   return (
     <div className="navbar__saved-news-options">
       <p className="navbar__saved-articles-text">Saved Articles</p>
@@ -9,8 +9,9 @@ function SavedNews() {
           <img
             src={userRectangleSavedNews}
             alt=""
-            className="navbar__user-rectangle_saved-news"
+            className={"navbar__user-rectangle_saved-news"}
           />
+
           <div className="navbar__user-button-elements">
             <p className="navbar__user-button-text_saved-news"></p>
             {currentUser.name || "User"}
@@ -26,4 +27,4 @@ function SavedNews() {
   );
 }
 
-export default SavedNews;
+export default NavbarSavedNews;

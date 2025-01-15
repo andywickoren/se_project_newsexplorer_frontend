@@ -11,15 +11,17 @@ import { useLayout } from "../../contexts/LayoutContext";
 import menuIconHome from "../../assets/menu-icon-home.png";
 import NavbarMobile from "../NavbarMobile/NavbarMobile";
 import NavbarMain from "../NavbarMain/NavbarMain";
+import NavbarSavedNews from "../NavbarSavedNews/NavbarSavedNews";
 
 function Navbar({ handleSigninClick, isLoggedIn }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const layout = useLayout();
+  console.log("NAVBAR isLoggedIn: ", isLoggedIn);
   console.log("Navbar Layout: =============>>", layout);
   const { currentUser } = useContext(CurrentUserContext);
-  // const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   useEffect(() => {
+    console.log("useEffect - isLoggedIn:", isLoggedIn);
     const updateScreenSize = () => {
       setIsSmallScreen(window.innerWidth <= 685);
     };
@@ -57,9 +59,27 @@ function Navbar({ handleSigninClick, isLoggedIn }) {
           </Link>
           {isLoggedIn ? (
             layout !== "SavedNews" ? (
-              <NavbarMain></NavbarMain>
+              <NavbarMain isLoggedIn={isLoggedIn}></NavbarMain>
             ) : (
-              <div className="navbar__logged-in-options">
+              <NavbarSavedNews isLoggedIn={isLoggedIn}></NavbarSavedNews>
+            )
+          ) : (
+            <button
+              className="navbar__signin-button"
+              onClick={handleSigninClick}
+            >
+              <img src={mainSignin} alt="" className="navbar__signin-image" />
+              <p className="navbar__signin-button-text">Sign in</p>
+            </button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+{
+  /* <div className="navbar__logged-in-options">
                 <Link to="/saved-news">
                   <button className="navbar__saved-articles-button">
                     Saved Articles
@@ -75,21 +95,7 @@ function Navbar({ handleSigninClick, isLoggedIn }) {
                     {currentUser.name || "User"}
                   </p>
                 </button>
-              </div>
-            )
-          ) : (
-            <button
-              className="navbar__signin-button"
-              onClick={handleSigninClick}
-            >
-              <img src={mainSignin} alt="" className="navbar__signin-image" />
-              <p className="navbar__signin-button-text">Sign in</p>
-            </button>
-          )}
-        </div>
-      )}
-    </div>
-  );
+              </div> */
 }
 
 // return (
@@ -116,28 +122,28 @@ function Navbar({ handleSigninClick, isLoggedIn }) {
 //         </button>
 //       </Link>
 //       {layout === "SavedNews" ? (
-//         <div className="navbar__saved-news-options">
-//           <p className="navbar__saved-articles-text">Saved Articles</p>
-//           <Link to="/" className="navbar__link">
-//             <button className="navbar__user-button">
-//               <img
-//                 src={userRectangleSavedNews}
-//                 alt=""
-//                 className={"navbar__user-rectangle_saved-news"}
-//               />
+// <div className="navbar__saved-news-options">
+//   <p className="navbar__saved-articles-text">Saved Articles</p>
+//   <Link to="/" className="navbar__link">
+//     <button className="navbar__user-button">
+//       <img
+//         src={userRectangleSavedNews}
+//         alt=""
+//         className={"navbar__user-rectangle_saved-news"}
+//       />
 
-//               <div className="navbar__user-button-elements">
-//                 <p className="navbar__user-button-text_saved-news"></p>
-//                 {currentUser.name || "User"}
-//                 <img
-//                   src={union}
-//                   alt=""
-//                   className="navbar__user-button-union_saved-news"
-//                 />
-//               </div>
-//             </button>
-//           </Link>
-//         </div>
+//       <div className="navbar__user-button-elements">
+//         <p className="navbar__user-button-text_saved-news"></p>
+//         {currentUser.name || "User"}
+//         <img
+//           src={union}
+//           alt=""
+//           className="navbar__user-button-union_saved-news"
+//         />
+//       </div>
+//     </button>
+//   </Link>
+// </div>
 //       ) : !isLoggedIn ? (
 //   <button className="navbar__signin-button" onClick={handleSigninClick}>
 //     <img src={mainSignin} alt="" className="navbar__signin-image" />
