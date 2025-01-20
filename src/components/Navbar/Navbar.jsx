@@ -13,7 +13,7 @@ import NavbarMobile from "../NavbarMobile/NavbarMobile";
 import NavbarMain from "../NavbarMain/NavbarMain";
 import NavbarSavedNews from "../NavbarSavedNews/NavbarSavedNews";
 
-function Navbar({ handleSigninClick, isLoggedIn }) {
+function Navbar({ handleSigninClick, isLoggedIn, logout }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const layout = useLayout();
   console.log("NAVBAR isLoggedIn: ", isLoggedIn);
@@ -26,7 +26,7 @@ function Navbar({ handleSigninClick, isLoggedIn }) {
       setIsSmallScreen(window.innerWidth <= 685);
     };
     window.addEventListener("resize", updateScreenSize);
-    updateScreenSize(); // Initial check
+    updateScreenSize();
     return () => window.removeEventListener("resize", updateScreenSize);
   }, []);
 
@@ -45,7 +45,11 @@ function Navbar({ handleSigninClick, isLoggedIn }) {
       </Link>
 
       {isSmallScreen ? (
-        <NavbarMobile isLoggedIn={isLoggedIn}></NavbarMobile>
+        <NavbarMobile
+          handleSigninClick={handleSigninClick}
+          isLoggedIn={isLoggedIn}
+          logout={logout}
+        ></NavbarMobile>
       ) : (
         <div className="navbar__options">
           <Link to="/" className="navbar__link">

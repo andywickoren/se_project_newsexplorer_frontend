@@ -1,9 +1,19 @@
 import "./SearchForm.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function SearchForm({ onSearch, setKeywords }) {
   const [query, setQuery] = useState("");
   const [searchError, setSearchError] = useState("");
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const updateScreenSize = () => {
+      setIsSmallScreen(window.innerWidth <= 685);
+    };
+    window.addEventListener("resize", updateScreenSize);
+    updateScreenSize();
+    return () => window.removeEventListener("resize", updateScreenSize);
+  }, []);
 
   const handleChange = (e) => {
     setQuery(e.target.value);
@@ -30,19 +40,35 @@ function SearchForm({ onSearch, setKeywords }) {
 
   return (
     <form className="search-form" onSubmit={handleSubmit}>
-      <div className="modal__input-wrapper">
-        <input
-          type="text"
-          className="search-form__input"
-          placeholder="Enter topic"
-          aria-label="Search topics"
-          onChange={handleChange}
-        />
-        <span className="search-form__error-message">{searchError}</span>
-        <button type="submit" className="search-form__button">
-          Submit
-        </button>
-      </div>
+      {!isSmallScreen ? (
+        <div className="search-form__input-wrapper">
+          <input
+            type="text"
+            className="search-form__input"
+            placeholder="Enter topic"
+            aria-label="Search topics"
+            onChange={handleChange}
+          />
+          <span className="search-form__error-message">{searchError}</span>
+          <button type="submit" className="search-form__button">
+            Submit
+          </button>
+        </div>
+      ) : (
+        <div className="search-form__input-wrapper">
+          <input
+            type="text"
+            className="search-form__input"
+            placeholder="Enter topic"
+            aria-label="Search topics"
+            onChange={handleChange}
+          />
+          <span className="search-form__error-message">{searchError}</span>
+          <button type="submit" className="search-form__button">
+            Submit
+          </button>
+        </div>
+      )}
     </form>
   );
 }

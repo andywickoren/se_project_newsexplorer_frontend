@@ -42,7 +42,7 @@
   align-items: center;
 }
 
-.navbar__menu-icon {
+/* .navbar__menu-icon {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -51,7 +51,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-}
+} */
 
 .navbar__home-button {
   margin-right: 76px;
@@ -179,5 +179,11 @@
 
   .navbar__saved-articles-text {
     height: 66px;
+  }
+}
+
+@media (max-width: 735px) {
+  .navbar {
+    height: 56px;
   }
 }

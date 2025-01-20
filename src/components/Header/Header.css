@@ -57,4 +57,34 @@ header h1 {
     margin: 32px 0 32px 0;
     max-width: 452px;
   }
+
+  @media (max-width: 735px) {
+    .header__content {
+      padding: 0 16px 0 19px;
+      width: 100%;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      /* content: fit; */
+    }
+
+    .header__title {
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 16px;
+    }
+
+    .header__caption {
+      max-width: 100%;
+      margin-bottom: 122px;
+    }
+
+    .header__search-form {
+      width: 100%;
+      margin: 0 0 32px 0;
+    }
+
+    .header {
+      height: auto;
+    }
+  }
 }

@@ -199,6 +199,7 @@ function App() {
                 element={
                   <>
                     <Header
+                      logout={onLogout}
                       handleSigninClick={handleSigninClick}
                       handleSearch={handleSearch}
                       isLoggedIn={isLoggedIn}
@@ -222,6 +223,9 @@ function App() {
                 path="/saved-news"
                 element={
                   <SavedNews
+                    handleSigninClick={handleSigninClick}
+                    logout={onLogout}
+                    isLoggedIn={isLoggedIn}
                     newsCards={newsCards}
                     keywords={keywords}
                   ></SavedNews>

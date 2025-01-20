@@ -31,7 +31,22 @@
   }
 
   .about__description {
-    font-size: 18px;
     line-height: 24px;
+  }
+}
+
+@media (max-width: 685px) {
+  .about {
+    flex-direction: column;
+    padding: 61px 40px;
+    align-items: center;
+  }
+
+  .about__title {
+    margin: 24px 0 16px 0;
+  }
+
+  .about__avatar {
+    margin-right: 0;
   }
 }

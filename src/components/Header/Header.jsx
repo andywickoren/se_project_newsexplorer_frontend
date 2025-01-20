@@ -3,7 +3,13 @@ import Navbar from "../Navbar/Navbar";
 import SearchForm from "../SearchForm/SearchForm";
 import headerBackground from "../../assets/header-background.png";
 
-function Header({ handleSigninClick, handleSearch, isLoggedIn, setKeywords }) {
+function Header({
+  handleSigninClick,
+  handleSearch,
+  isLoggedIn,
+  setKeywords,
+  logout,
+}) {
   const layout = "Home";
   return (
     <header
@@ -11,6 +17,7 @@ function Header({ handleSigninClick, handleSearch, isLoggedIn, setKeywords }) {
       style={{ backgroundImage: `url(${headerBackground})` }}
     >
       <Navbar
+        logout={logout}
         handleSigninClick={handleSigninClick}
         layout={layout}
         isLoggedIn={isLoggedIn}

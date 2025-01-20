@@ -1,6 +1,12 @@
 import userRectangle from "../../assets/user-rectangle.png";
+import userRectangleSavedNews from "../../assets/user-rectangle-saved-news.png";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+import union from "../../assets/union.png";
 
 function NavbarSavedNews({ isLoggedIn }) {
+  const { currentUser } = useContext(CurrentUserContext);
   return (
     <div className="navbar__saved-news-options">
       <p className="navbar__saved-articles-text">Saved Articles</p>

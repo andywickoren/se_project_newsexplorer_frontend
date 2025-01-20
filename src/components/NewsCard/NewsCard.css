@@ -166,8 +166,18 @@
     height: 420px;
     width: 224px;
     border-radius: 25px;
-    position: relative;
-    overflow: hidden;
+    /* position: relative;
+    overflow: hidden; */
+  }
+
+  .newsCard__bookmark-container {
+    top: -140px;
+    right: -174px;
+  }
+
+  .newsCard__bookmark {
+    top: -148px;
+    right: -142px;
   }
 
   .newsCard__image-container {
@@ -186,6 +196,16 @@
   .newsCard__container {
     height: 440px;
     width: 288px;
+  }
+
+  .newsCard__bookmark-container {
+    top: -186px;
+    right: -232px;
+  }
+
+  .newsCard__bookmark {
+    top: -194px;
+    right: -200px;
   }
   .newsCard__image-container {
     height: 196px;
