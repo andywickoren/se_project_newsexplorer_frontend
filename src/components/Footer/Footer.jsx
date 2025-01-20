@@ -18,14 +18,17 @@ function Footer({ logout }) {
     <footer className="footer">
       {!isSmallScreen ? (
         <div className="footer__full-size">
-          <div className="footer__copyright">
+          <div className="footer__fullsize-copyright">
             © 2024 Supersite, Powered by News API
           </div>
-          <div className="footer__options">
+          <div className="footer__fullsize-options">
             <Link to="/" className="footer__link">
-              <button className="footer__options-home">Home</button>
+              <button className="footer__fullsize-options-home">Home</button>
             </Link>
-            <div className="footer__options-TripleTen" onClick={logout}>
+            <div
+              className="footer__fullsize-options-TripleTen"
+              onClick={logout}
+            >
               TripleTen
             </div>
             <a
@@ -34,7 +37,7 @@ function Footer({ logout }) {
               rel="noopener noreferrer"
             >
               <img
-                className="footer__options-github-icon"
+                className="footer__fullsize-options-github-icon"
                 src={githubIcon}
                 alt="GitHub"
               ></img>
@@ -45,7 +48,7 @@ function Footer({ logout }) {
               rel="noopener noreferrer"
             >
               <img
-                className="footer__options-facebook-icon"
+                className="footer__fullsize-options-facebook-icon"
                 src={facebookIcon}
                 alt="Facebook"
               ></img>
@@ -65,7 +68,7 @@ function Footer({ logout }) {
                 rel="noopener noreferrer"
               >
                 <img
-                  className="footer__options-github-icon"
+                  className="footer__mobile-options-github-icon"
                   src={githubIcon}
                   alt="GitHub"
                 ></img>
@@ -76,17 +79,17 @@ function Footer({ logout }) {
                 rel="noopener noreferrer"
               >
                 <img
-                  className="footer__options-facebook-icon"
+                  className="footer__mobile-options-facebook-icon"
                   src={facebookIcon}
                   alt="Facebook"
                 ></img>
               </a>
             </div>
           </div>
-          <div className="footer__options-TripleTen" onClick={logout}>
+          <div className="footer__mobile-TripleTen" onClick={logout}>
             TripleTen
           </div>
-          <div className="footer__copyright">
+          <div className="footer__mobile-copyright">
             © 2024 Supersite, Powered by News API
           </div>
         </div>

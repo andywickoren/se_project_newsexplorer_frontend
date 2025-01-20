@@ -10,23 +10,46 @@
   font-family: "Roboto", sans-serif;
 }
 
-.footer__copyright {
+.footer__fullsize-copyright {
   color: #b6bcbf;
 }
-.footer__options {
+.footer__fullsize-options {
   display: flex;
   align-items: center;
 }
 
-.footer__options-home {
+.footer__fullsize-options-home {
   font-family: "Roboto", sans-serif;
-}
-
-.footer__options-home {
   margin-right: 40px;
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.footer__fullsize-options-TripleTen {
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.footer__fullsize-options-github-icon {
+  margin-right: 24px;
+  cursor: pointer;
+}
+
+.footer__fullsize-options-facebook-icon {
+  cursor: pointer;
+}
+.footer__mobile {
+  padding: 20px 18px 22px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  font-family: "Roboto", sans-serif;
+}
+
+.footer__mobile-options {
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer__mobile-options-home {
@@ -37,29 +60,19 @@
   font-family: "Roboto", sans-serif;
 }
 
-.footer__options-TripleTen {
-  margin-right: 40px;
-  cursor: pointer;
-}
-
-.footer__options-github-icon {
+.footer__mobile-options-github-icon {
   margin-right: 24px;
   cursor: pointer;
 }
 
-.footer__options-facebook-icon {
+.footer__mobile-options-facebook-icon {
   cursor: pointer;
 }
 
-.footer__mobile-options {
-  display: flex;
-  justify-content: space-between;
+.footer__mobile-TripleTen {
+  cursor: pointer;
 }
 
-.footer__mobile {
-  padding: 20px 18px 22px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-  font-family: "Roboto", sans-serif;
+.footer__mobile-copyright {
+  color: #b6bcbf;
 }
