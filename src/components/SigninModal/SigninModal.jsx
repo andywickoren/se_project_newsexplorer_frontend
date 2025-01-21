@@ -46,7 +46,7 @@ function SigninModal({ openRegisterModal, onLogin, handleCloseClick, isOpen }) {
           className="modal__input"
           id="email"
           name="email"
-          placeholder="Frontend Demo: use email@gmail.com"
+          placeholder="Enter email"
           aria-label="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -64,7 +64,7 @@ function SigninModal({ openRegisterModal, onLogin, handleCloseClick, isOpen }) {
           className="modal__input"
           id="password"
           name="password"
-          placeholder="password123 "
+          placeholder="Enter password "
           aria-label="Enter your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
