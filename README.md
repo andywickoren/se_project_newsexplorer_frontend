@@ -82,7 +82,7 @@ CURRENT STATE OF THE APPLICATION
     Note to reviewer:
         Use email@gmail.com and password123 to login.
         Use the tripleten button in the footer to logout.
-        I did not see a logout option on the figma.  I was considering adding this feature on a popup on the username button, but am unsure if there are more specific requirements.  For now, you can use the tripleten button to change isLoggedIn state and view the app logged out.
+        I did not see a logout option on the figma.  I was considering adding this feature on a popup on the username button, but am unsure if there are more specific requirements.  For now, you can use the tripleten button in the footer to change isLoggedIn state and view the app logged out.
 
 TECHNOLOGIES USED
 
