@@ -12,7 +12,6 @@ function NavbarMobileModal({
 
   function closeActiveModal() {
     setActiveModal("");
-    // document.body.classList.remove("modal-open");
   }
 
   const handleOverlay = (e) => {

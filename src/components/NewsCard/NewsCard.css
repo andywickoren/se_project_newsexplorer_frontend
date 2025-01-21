@@ -42,11 +42,6 @@
   max-width: 180px;
 }
 
-/* .container {
-  display: flex;
-  height: 42px;
-} */
-
 .newsCard__label_delete {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -87,10 +82,6 @@
   margin: 24px;
   cursor: pointer;
 }
-/* .newsCard__trash-container:hover + .newsCard__label_delete {
-  display: block;
-  opacity: 1;
-} */
 
 .newsCard__trash-icon:hover {
   content: url("../../assets/trash-hover.png");
@@ -166,8 +157,6 @@
     height: 420px;
     width: 224px;
     border-radius: 25px;
-    /* position: relative;
-    overflow: hidden; */
   }
 
   .newsCard__bookmark-container {

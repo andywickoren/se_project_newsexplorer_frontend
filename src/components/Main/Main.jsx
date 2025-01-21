@@ -14,11 +14,9 @@ function Main({
   isLoggedIn,
 }) {
   return (
-    // !isLoading && ()
     <div className={`main ${isLoading && "main__is-loading"}`}>
       <Results
         newsCards={newsCards}
-        // layout={layout}
         isLoading={isLoading}
         noResults={noResults}
         isLoggedIn={isLoggedIn}

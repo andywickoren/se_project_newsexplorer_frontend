@@ -4,7 +4,7 @@ NewsExplorer Front End
 
 OVERVIEW
 
-The NewsExplorer frontend application is a React-based single-page application (SPA) built with Vite, designed to allow users to search for and save news articles using the NewsAPI. Users can interact with dynamically rendered components, enjoy conditional styling based on application state, and experience responsive design tailored for both mobile and desktop viewports.
+The NewsExplorer frontend application is a React-based single-page application (SPA) built with Vite, designed to allow users to search for and save news articles using the NewsAPI. Components are conditionally styled based on application state and the webpage is responsive, tailored for mobile, tablet and desktop viewports.
 
 GENERAL FUNCTIONALITY
 
@@ -55,7 +55,7 @@ GENERAL FUNCTIONALITY
 
     Register Modal:
         Allows new users to "register."
-        Includes validation feedback for form fields, though data is not stored due to the absence of a backend.
+        Includes validation feedback for form fields, though data is not currently stored due to the absence of a backend.  This will be implemented next.
 
     Login Modal:
         Validates user credentials to simulate logging in using a mock user.
@@ -77,11 +77,12 @@ CURRENT STATE OF THE APPLICATION
     };
 
     Backend Not Yet Implemented:
-    The registrations modal displays validation and style feedback but does not store user data.
+    The registration modal displays validation and style feedback but does not store user data.
     Saved articles persist only in session memory for the demo.
-    Note to reviewer: use email@gmail.com and password123 to login
-    Use the triplpeten button in the footer to logout
-    I did not see a logout option on the figma.  I was considering adding this feature on a popup on the username button, but am unsure there are more specific requirements.  For now, you can use the tripleten button to change isLoggedIn state and view the app logged out.
+    Note to reviewer:
+        Use email@gmail.com and password123 to login.
+        Use the tripleten button in the footer to logout.
+        I did not see a logout option on the figma.  I was considering adding this feature on a popup on the username button, but am unsure if there are more specific requirements.  For now, you can use the tripleten button to change isLoggedIn state and view the app logged out.
 
 TECHNOLOGIES USED
 

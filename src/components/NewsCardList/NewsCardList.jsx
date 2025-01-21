@@ -9,7 +9,6 @@ import NewsCardSaved from "../NewsCardSaved/NewsCardSaved";
 
 function NewsCardList({ newsCards, isLoggedIn }) {
   const layout = useLayout();
-  // console.log(newsCards);
   const { savedCards, setSavedCards } = useContext(SavedCardsContext);
   const [cardsToShow, setCardsToShow] = useState(3);
   const renderedCards = newsCards.slice(0, cardsToShow);
@@ -39,7 +38,6 @@ function NewsCardList({ newsCards, isLoggedIn }) {
                 author={card.author}
                 layout="SavedNews"
                 query={card.query}
-                // handleDelete={handleDelete}
                 isLoggedIn={isLoggedIn}
               />
             ))

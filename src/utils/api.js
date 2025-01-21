@@ -14,7 +14,6 @@ function checkResponse(res) {
 }
 
 export function getItems(query) {
-  // Get today's date and 7 days before
   const currentDate = new Date();
   const fromDate = new Date();
   fromDate.setDate(currentDate.getDate() - 7);

@@ -8,7 +8,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 16px;
-  /* margin-top: 33px; */
   padding: 0;
 }
 
@@ -19,7 +18,6 @@
   line-height: 34px;
   font-weight: 400;
   margin-bottom: 64px;
-  /* margin-top: 80px; */
 }
 
 .news-cards-list_saved-news {

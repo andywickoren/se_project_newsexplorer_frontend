@@ -29,12 +29,6 @@ function Results({ newsCards, isLoading, noResults, isLoggedIn }) {
   console.log("newsCards in Results:", newsCards);
 
   return <div className="results">{content}</div>;
-
-  // return (
-  //   <div className="results__preloader">
-  //     <Preloader />
-  //   </div>
-  // );
 }
 
 export default Results;

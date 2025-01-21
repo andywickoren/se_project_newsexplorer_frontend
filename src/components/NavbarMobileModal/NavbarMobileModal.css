@@ -1,7 +1,3 @@
-/* .modal-open {
-  background-color: rgba(0, 0, 0, 0.6);
-} */
-
 .navbar-mobile__menu-icon_saved-news {
   color: #000;
 }
@@ -23,7 +19,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Overlay effect */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +54,6 @@
 .navbar-mobile-modal__header {
   display: flex;
   justify-content: space-between;
-  /* border-bottom: 1px solid #fff; */
   padding: 16px;
 }
 

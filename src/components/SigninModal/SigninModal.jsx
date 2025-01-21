@@ -1,4 +1,3 @@
-// import { useForm } from "../../hooks/useForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./SigninModal.css";
 import { useState } from "react";
@@ -81,7 +80,6 @@ function SigninModal({ openRegisterModal, onLogin, handleCloseClick, isOpen }) {
         <button
           type="submit"
           className="modal__submit modal__signin-btn"
-          // onClick={onLogin}
         >
           Sign in
         </button>

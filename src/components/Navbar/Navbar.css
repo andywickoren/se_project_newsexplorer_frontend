@@ -42,20 +42,8 @@
   align-items: center;
 }
 
-/* .navbar__menu-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 18px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-} */
-
 .navbar__home-button {
   margin-right: 76px;
-  /* cursor: pointer; */
   border: none;
   background-color: transparent;
   color: white;
@@ -85,8 +73,6 @@
   font-weight: 500;
 }
 
-.navbar__user-rectangle {
-}
 .navbar__user-rectangle_saved-news {
   position: relative;
   color: black;
@@ -158,8 +144,6 @@
 .navbar__user-button-username {
   align-self: center;
   position: absolute;
-  /* top: 0;
-  right: 0; */
 }
 
 .navbar__username_saved-news {

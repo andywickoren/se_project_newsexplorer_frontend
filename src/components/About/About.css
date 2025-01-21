@@ -16,6 +16,23 @@
   font-size: 18px;
 }
 
+.about__show-more-button {
+  align-self: center;
+  height: 64px;
+  width: 288px;
+  background-color: #f5f6f7;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 20px;
+  border-radius: 80px;
+  border: none;
+  position: relative;
+}
+
 @media (max-width: 1025px) {
   .about {
     padding: 61px 40px;

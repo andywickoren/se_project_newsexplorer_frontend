@@ -3,7 +3,6 @@ import Main from "../Main/Main";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 import SavedNews from "../SavedNews/SavedNews";
-import Preloader from "../Preloader/Preloader";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import SigninModal from "../SigninModal/SigninModal";
@@ -14,7 +13,6 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 import SavedCardsContext from "../../contexts/SavedCardsContext";
 import { LayoutContext } from "../../contexts/LayoutContext";
 import { useLocation } from "react-router-dom";
-import Results from "../Results/Results";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -138,26 +136,6 @@ function App() {
     setHasNoResults(false);
   };
 
-  // useEffect(() => {
-  //   setHasNoResults(false);
-  // });
-
-  // useEffect(() => {
-  //   getItems()
-  //     .then((data) => {
-  //       setNewsCards(
-  //         data.articles.map((article) => ({
-  //           name: article.title,
-  //           imageUrl: article.urlToImage,
-  //           date: article.publishedAt,
-  //           description: article.content,
-  //           author: article.author,
-  //         }))
-  //       );
-  //     })
-  //     .catch(console.error);
-  // }, []);
-
   function closeActiveModal() {
     setActiveModal("");
   }
@@ -195,7 +173,6 @@ function App() {
             <Routes>
               <Route
                 path="/"
-                //could I somehow put my layout prop here instead of papssing it as
                 element={
                   <>
                     <Header
@@ -207,9 +184,7 @@ function App() {
                     ></Header>
                     {(isLoading || hasNoResults || newsCards.length > 0) && (
                       <Main
-                        // handleSearch={handleSearch}
                         newsCards={newsCards}
-                        // handleSigninClick={handleSigninClick}
                         isLoading={isLoading}
                         noResults={hasNoResults}
                         isLoggedIn={isLoggedIn}

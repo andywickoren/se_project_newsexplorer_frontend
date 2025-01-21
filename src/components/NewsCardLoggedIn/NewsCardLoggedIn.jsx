@@ -4,7 +4,6 @@ import bookmarkContainer from "../../assets/bookmark-container.png";
 import SavedCardsContext from "../../contexts/SavedCardsContext";
 import { useContext } from "react";
 import NewsCard from "../NewsCard/NewsCard";
-// import { useCards } from "../../contexts/CardsContext";
 
 function NewsCardLoggedIn({ name, url, description, date, author, query }) {
   const { savedCards, setSavedCards } = useContext(SavedCardsContext);

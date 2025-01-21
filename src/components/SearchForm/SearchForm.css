@@ -2,7 +2,6 @@
   display: flex;
   align-items: top;
   justify-content: center;
-  /* width: 100%; */
   max-width: 610px;
   margin: 0 auto;
   position: relative;
@@ -69,7 +68,6 @@
 @media (max-width: 1025px) {
   .search-form {
     width: 452px;
-    /* width: fit-content; */
   }
 
   .search-form__input {
@@ -89,14 +87,12 @@
 @media (max-width: 735px) {
   .search-form {
     width: 100%;
-    /* width: fit-content; */
   }
 
   .search-form__input {
     box-sizing: border-box;
     width: 100%;
     margin-bottom: 16px;
-    /* padding: 0; */
   }
   .search-form__button {
     position: relative;

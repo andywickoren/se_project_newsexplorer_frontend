@@ -4,17 +4,7 @@ import trashIcon from "../../assets/trash-icon.png";
 import { useContext } from "react";
 import SavedCardsContext from "../../contexts/SavedCardsContext";
 
-function NewsCardSaved({
-  name,
-  url,
-  description,
-  date,
-  author,
-  layout,
-  query,
-  //   handleDelete,
-  isLoggedIn,
-}) {
+function NewsCardSaved({ name, url, description, date, author, query }) {
   const uniqueKey = url;
   const [isHovered, setIsHovered] = useState(false);
   const { savedCards, setSavedCards } = useContext(SavedCardsContext);
