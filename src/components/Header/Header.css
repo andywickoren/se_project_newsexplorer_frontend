@@ -7,6 +7,9 @@ header h1 {
   font-weight: 400;
   color: #fff;
   height: 576px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .header__title {

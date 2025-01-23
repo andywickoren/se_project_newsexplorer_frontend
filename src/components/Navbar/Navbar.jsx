@@ -28,52 +28,54 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
 
   return (
     <div className="navbar">
-      <Link to="/" className="navbar__link">
-        <div
-          className={`navbar__news-explorer-button ${
-            layout === "SavedNews"
-              ? "navbar__news-explorer-button_saved-news"
-              : ""
-          }`}
-        >
-          NewsExplorer
-        </div>
-      </Link>
+      <div className="navbar__content">
+        <Link to="/" className="navbar__link">
+          <div
+            className={`navbar__news-explorer-button ${
+              layout === "SavedNews"
+                ? "navbar__news-explorer-button_saved-news"
+                : ""
+            }`}
+          >
+            NewsExplorer
+          </div>
+        </Link>
 
-      {isSmallScreen ? (
-        <NavbarMobile
-          handleSigninClick={handleSigninClick}
-          isLoggedIn={isLoggedIn}
-          logout={logout}
-        ></NavbarMobile>
-      ) : (
-        <div className="navbar__options">
-          <Link to="/" className="navbar__link">
-            <button
-              className={`navbar__home-button ${
-                layout === "SavedNews" ? "navbar__home-button_saved-news" : ""
-              }`}
-            >
-              Home
-            </button>
-          </Link>
-          {isLoggedIn ? (
-            layout !== "SavedNews" ? (
-              <NavbarMain isLoggedIn={isLoggedIn}></NavbarMain>
+        {isSmallScreen ? (
+          <NavbarMobile
+            handleSigninClick={handleSigninClick}
+            isLoggedIn={isLoggedIn}
+            logout={logout}
+          ></NavbarMobile>
+        ) : (
+          <div className="navbar__options">
+            <Link to="/" className="navbar__link">
+              <button
+                className={`navbar__home-button ${
+                  layout === "SavedNews" ? "navbar__home-button_saved-news" : ""
+                }`}
+              >
+                Home
+              </button>
+            </Link>
+            {isLoggedIn ? (
+              layout !== "SavedNews" ? (
+                <NavbarMain isLoggedIn={isLoggedIn}></NavbarMain>
+              ) : (
+                <NavbarSavedNews isLoggedIn={isLoggedIn}></NavbarSavedNews>
+              )
             ) : (
-              <NavbarSavedNews isLoggedIn={isLoggedIn}></NavbarSavedNews>
-            )
-          ) : (
-            <button
-              className="navbar__signin-button"
-              onClick={handleSigninClick}
-            >
-              <img src={mainSignin} alt="" className="navbar__signin-image" />
-              <p className="navbar__signin-button-text">Sign in</p>
-            </button>
-          )}
-        </div>
-      )}
+              <button
+                className="navbar__signin-button"
+                onClick={handleSigninClick}
+              >
+                <img src={mainSignin} alt="" className="navbar__signin-image" />
+                <p className="navbar__signin-button-text">Sign in</p>
+              </button>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

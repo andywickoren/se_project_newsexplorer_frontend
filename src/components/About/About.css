@@ -1,6 +1,8 @@
 .about {
   display: flex;
-  padding: 80px 104px;
+  margin: 80px 104px;
+  max-width: 1660px;
+  justify-self: center;
 }
 
 .about__avatar {
@@ -16,8 +18,12 @@
   font-size: 18px;
 }
 
+.about__show-more-button-container {
+  display: flex;
+  justify-content: center;
+}
+
 .about__show-more-button {
-  align-self: center;
   height: 64px;
   width: 288px;
   background-color: #f5f6f7;
@@ -27,12 +33,16 @@
   cursor: pointer;
   text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease;
-  margin-top: 20px;
+  margin-top: 55px;
   border-radius: 80px;
   border: none;
-  position: relative;
 }
 
+@media (max-width: 1856px) {
+  .about {
+    max-width: 1240px;
+  }
+}
 @media (max-width: 1025px) {
   .about {
     padding: 61px 40px;
@@ -65,5 +75,9 @@
 
   .about__avatar {
     margin-right: 0;
+  }
+
+  .about__show-more-button {
+    margin-top: 25px;
   }
 }

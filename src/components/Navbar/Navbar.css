@@ -1,11 +1,16 @@
 .navbar {
+  border-bottom: 1px solid #d1d2d6;
+  /* display: flex; */
+}
+
+.navbar__content {
+  max-width: 1870px;
   height: 80px;
   display: flex;
   justify-content: space-between;
   padding-left: 40px;
   padding-right: 40px;
   align-items: center;
-  border-bottom: 1px solid #d1d2d6;
 }
 
 .navbar__news-explorer-button {

@@ -1,5 +1,6 @@
 .news-cards {
   background-color: #f5f6f7;
+  max-width: 1660px;
 }
 
 .news-card-list {
@@ -46,6 +47,13 @@
   border: none;
   position: relative;
 }
+
+@media (max-width: 1856px) {
+  .news-cards {
+    max-width: 1240px;
+  }
+}
+
 @media (max-width: 1025px) {
   .news-cards__heading {
     margin-top: 8px;

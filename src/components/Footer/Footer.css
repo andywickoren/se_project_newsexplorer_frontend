@@ -1,9 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
 .footer__link {
   display: contents;
   text-decoration: none;
 }
 
 .footer__full-size {
+  max-width: 1870px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 24px 40px 18px;
@@ -75,4 +82,10 @@
 
 .footer__mobile-copyright {
   color: #b6bcbf;
+}
+
+@media (max-width: 1856px) {
+  .footer__full-size {
+    max-width: 1240px;
+  }
 }

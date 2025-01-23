@@ -58,12 +58,14 @@ function About() {
                 websites and digital content that emphasizes integrative and
                 holistic approaches to well-being.
               </p>
-              <button
-                className="about__show-more-button"
-                onClick={handleExpand}
-              >
-                Show Less
-              </button>
+              <div className="about__show-more-button-container">
+                <button
+                  className="about__show-more-button"
+                  onClick={handleExpand}
+                >
+                  Show Less
+                </button>
+              </div>
             </>
           )}
         </div>
