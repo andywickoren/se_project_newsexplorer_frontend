@@ -24,9 +24,14 @@ function About() {
             website.{isReduced && <span className="about__ellipsis">..</span>}
           </p>
           {isReduced ? (
-            <button className="about__show-more-button" onClick={handleExpand}>
-              Show More
-            </button>
+            <div className="about__show-more-button-container">
+              <button
+                className="about__show-more-button"
+                onClick={handleExpand}
+              >
+                Show More
+              </button>
+            </div>
           ) : (
             <>
               <p>

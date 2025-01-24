@@ -9,7 +9,7 @@
 }
 
 .footer__full-size {
-  max-width: 1870px;
+  max-width: 1660px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -87,5 +87,11 @@
 @media (max-width: 1856px) {
   .footer__full-size {
     max-width: 1240px;
+  }
+}
+
+@media (max-width: 685px) {
+  .footer {
+    display: block;
   }
 }

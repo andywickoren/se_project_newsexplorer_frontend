@@ -19,7 +19,7 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
   useEffect(() => {
     console.log("useEffect - isLoggedIn:", isLoggedIn);
     const updateScreenSize = () => {
-      setIsSmallScreen(window.innerWidth <= 685);
+      setIsSmallScreen(window.innerWidth <= 735);
     };
     window.addEventListener("resize", updateScreenSize);
     updateScreenSize();
@@ -28,7 +28,11 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
 
   return (
     <div className="navbar">
-      <div className="navbar__content">
+      <div
+        className={`navbar__content ${
+          layout === "SavedNews" ? "navbar__content_saved-news" : ""
+        }`}
+      >
         <Link to="/" className="navbar__link">
           <div
             className={`navbar__news-explorer-button ${
