@@ -4,7 +4,7 @@ import facebookIcon from "../../assets/facebook6-icon.png";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-function Footer({ logout }) {
+function Footer() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   useEffect(() => {
     const updateScreenSize = () => {
@@ -25,11 +25,17 @@ function Footer({ logout }) {
             <Link to="/" className="footer__link">
               <button className="footer__fullsize-options-home">Home</button>
             </Link>
-            <div
-              className="footer__fullsize-options-TripleTen"
-              onClick={logout}
-            >
-              TripleTen
+            <div className="footer__fullsize-options-tripleten">
+              <a
+                className="footer__fullsize-options-tripleten-anchor"
+                href="https://www.tripleten.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p className="footer__fullsize-options-tripleten-icon">
+                  TripleTen
+                </p>
+              </a>
             </div>
             <a
               href="https://www.github.com"
@@ -86,8 +92,15 @@ function Footer({ logout }) {
               </a>
             </div>
           </div>
-          <div className="footer__mobile-TripleTen" onClick={logout}>
-            TripleTen
+          <div className="footer__mobile-tripleten">
+            <a
+              className="footer__mobile-tripleten-anchor"
+              href="https://www.tripleten.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className="footer__mobile-options-tripleten-icon">TripleTen</p>
+            </a>
           </div>
           <div className="footer__mobile-copyright">
             © 2024 Supersite, Powered by News API

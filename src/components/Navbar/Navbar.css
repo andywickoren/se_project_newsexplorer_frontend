@@ -150,7 +150,7 @@
   align-self: center;
 }
 
-.navbar__user-button-username {
+.navbar__user-button-logout {
   align-self: center;
   position: absolute;
 }
@@ -164,6 +164,10 @@
 @media (max-width: 1856px) {
   .navbar__content {
     max-width: 1240px;
+  }
+
+  .navbar__content_saved-news {
+    max-width: 1315px;
   }
 }
 

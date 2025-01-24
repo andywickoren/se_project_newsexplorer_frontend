@@ -33,9 +33,14 @@
   cursor: pointer;
 }
 
-.footer__fullsize-options-TripleTen {
+.footer__fullsize-options-tripleten {
   margin-right: 40px;
   cursor: pointer;
+}
+
+.footer__fullsize-options-tripleten-anchor {
+  text-decoration: none;
+  color: inherit;
 }
 
 .footer__fullsize-options-github-icon {
@@ -76,8 +81,13 @@
   cursor: pointer;
 }
 
-.footer__mobile-TripleTen {
+.footer__mobile-tripleten {
   cursor: pointer;
+}
+
+.footer__mobile-tripleten-anchor {
+  text-decoration: none;
+  color: inherit;
 }
 
 .footer__mobile-copyright {

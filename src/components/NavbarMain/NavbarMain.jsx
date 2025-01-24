@@ -3,7 +3,7 @@ import userRectangle from "../../assets/user-rectangle.png";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function NavbarMain() {
+function NavbarMain({ logout }) {
   const { currentUser } = useContext(CurrentUserContext);
   return (
     <div className="navbar__logged-in-options">
@@ -14,8 +14,8 @@ function NavbarMain() {
       </Link>
       <button className="navbar__user-button">
         <img src={userRectangle} alt="" className="navbar__user-rectangle" />
-        <p className="navbar__user-button-username">
-          {currentUser.name || "User"}
+        <p className="navbar__user-button-logout" onClick={logout}>
+          Sign out
         </p>
       </button>
     </div>

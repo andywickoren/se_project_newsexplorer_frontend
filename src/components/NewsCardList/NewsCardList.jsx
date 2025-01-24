@@ -1,5 +1,4 @@
 import "./NewsCardList.css";
-import NewsCard from "../NewsCard/NewsCard";
 import { useState } from "react";
 import { useContext } from "react";
 import SavedCardsContext from "../../contexts/SavedCardsContext";
@@ -17,9 +16,9 @@ function NewsCardList({ newsCards, isLoggedIn }) {
   };
 
   return (
-    <div className="news-cards__background">
+    <div className="news-cards">
       <div
-        className={`news-cards ${
+        className={`news-cards__content ${
           layout === "SavedNews" ? "news-cards_saved-news" : ""
         }`}
       >

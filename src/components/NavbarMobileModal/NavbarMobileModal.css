@@ -57,7 +57,8 @@
   padding: 16px;
 }
 
-.navbar-mobile-modal__home {
+.navbar-mobile-modal__home,
+.navbar-mobile-modal__saved-articles {
   font-family: "Roboto";
   font-weight: 500;
   font-size: 18px;
@@ -71,11 +72,13 @@
   width: min-content;
 }
 
-.navbar-mobile-modal__home:hover {
+.navbar-mobile-modal__home:hover,
+.navbar-mobile-modal__saved-articles:hover {
   color: #b6bcbf;
 }
 
-.navbar-mobile-modal__home_logged-in {
+.navbar-mobile-modal__home_logged-in,
+.navbar-mobile-modal__saved-articles_logged-in {
   width: 150px;
 }
 
@@ -83,7 +86,9 @@
   padding: 16px;
 }
 
-.navbar-mobile-modal__signin {
+.navbar-mobile-modal__signin,
+.navbar-mobile-modal__signout,
+.navbar-mobile-modal__home-button {
   width: 288px;
   background: transparent;
   border: 1px solid #fff;
@@ -91,7 +96,8 @@
   cursor: pointer;
 }
 
-.navbar-mobile-modal__signin-text {
+.navbar-mobile-modal__signin-text,
+.navbar-mobile-modal__signout-text {
   color: #fff;
   font-size: 18px;
   font-weight: 500;

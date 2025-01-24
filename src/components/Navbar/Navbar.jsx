@@ -64,7 +64,10 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
             </Link>
             {isLoggedIn ? (
               layout !== "SavedNews" ? (
-                <NavbarMain isLoggedIn={isLoggedIn}></NavbarMain>
+                <NavbarMain
+                  isLoggedIn={isLoggedIn}
+                  logout={logout}
+                ></NavbarMain>
               ) : (
                 <NavbarSavedNews isLoggedIn={isLoggedIn}></NavbarSavedNews>
               )

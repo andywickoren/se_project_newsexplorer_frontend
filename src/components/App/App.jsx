@@ -208,7 +208,7 @@ function App() {
               />
             </Routes>
 
-            <Footer logout={onLogout}></Footer>
+            <Footer></Footer>
             {activeModal === "signin-modal" && (
               <SigninModal
                 onLogin={onLogin}

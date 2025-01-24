@@ -9,10 +9,6 @@
 }
 
 .search-form__input {
-  /* margin-bottom: 80px; */
-}
-
-.search-form__input {
   height: 64px;
   width: 608px;
   border: none;
@@ -20,6 +16,7 @@
   padding: 0 24px;
   font-size: 16px;
   outline: none;
+  font-family: "Roboto", sans-serif;
 }
 
 .search-form__input_mobile {
@@ -44,9 +41,11 @@
   border: none;
   background-color: #2f71e5;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   border-radius: 100px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 18px;
 }
 
 .search-form__button:hover {

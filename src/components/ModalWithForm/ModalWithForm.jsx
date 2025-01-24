@@ -21,7 +21,9 @@ function ModalWithForm({
         <button
           onClick={handleCloseClick}
           type="button"
-          className="modal__close"
+          className={`modal__close ${
+            title === "Sign in" ? "modal__close-signin" : "modal__close-signup"
+          }`}
           aria-label="close"
         >
           <img src={close} alt="Close modal" className="modal__close-icon" />

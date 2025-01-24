@@ -2,7 +2,7 @@ import "./NewsCard.css";
 
 function NewsCard({ name, url, date, description, author, children }) {
   return (
-    <div className="newsCard__container">
+    <div className="newsCard">
       <div className="newsCard__image-container">
         <img src={url} alt={name} className="newsCard__image" />
       </div>

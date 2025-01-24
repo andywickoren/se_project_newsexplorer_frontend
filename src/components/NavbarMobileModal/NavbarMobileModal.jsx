@@ -1,6 +1,7 @@
 import "./NavbarMobileModal.css";
 import close from "../../assets/mobile-close.png";
 import { Link } from "react-router-dom";
+import { useLayout } from "../../contexts/LayoutContext";
 
 function NavbarMobileModal({
   isLoggedIn,
@@ -8,6 +9,7 @@ function NavbarMobileModal({
   setActiveModal,
   logout,
 }) {
+  const layout = useLayout();
   console.log("Rendering NavbarMobileModal");
 
   function closeActiveModal() {
@@ -46,18 +48,29 @@ function NavbarMobileModal({
             <>
               <Link to="/saved-news" className="navbar-mobile-modal__link">
                 <p
-                  className="navbar-mobile-modal__home navbar-mobile-modal__home_logged-in"
+                  className="navbar-mobile-modal__saved-articles navbar-mobile-modal__saved-articles_logged-in"
                   onClick={closeActiveModal}
                 >
                   Saved Articles
                 </p>
               </Link>
-              <button
-                className="navbar-mobile-modal__signin"
-                onClick={handleMobileSignout}
-              >
-                <p className="navbar-mobile-modal__signin-text">Sign out</p>
-              </button>
+              {layout !== "SavedNews" ? (
+                <button
+                  className="navbar-mobile-modal__signout"
+                  onClick={handleMobileSignout}
+                >
+                  <p className="navbar-mobile-modal__signout-text">Sign out</p>
+                </button>
+              ) : (
+                <Link to="/" className="navbar-mobile-modal__link">
+                  <button
+                    className="navbar-mobile-modal__home-button"
+                    onClick={closeActiveModal}
+                  >
+                    <p className="navbar-mobile-modal__signin-text">Home</p>
+                  </button>
+                </Link>
+              )}
             </>
           ) : (
             <>

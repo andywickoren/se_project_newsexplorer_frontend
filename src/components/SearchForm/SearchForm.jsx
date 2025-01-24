@@ -51,7 +51,7 @@ function SearchForm({ onSearch, setKeywords }) {
           />
           <span className="search-form__error-message">{searchError}</span>
           <button type="submit" className="search-form__button">
-            Submit
+            Search
           </button>
         </div>
       ) : (
