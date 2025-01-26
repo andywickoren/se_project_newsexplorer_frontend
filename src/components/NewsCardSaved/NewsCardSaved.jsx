@@ -1,6 +1,6 @@
 import { useState } from "react";
 import NewsCard from "../NewsCard/NewsCard";
-import trashIcon from "../../assets/trash-icon.png";
+import trashIcon from "../../assets/trash-icon.svg";
 import { useContext } from "react";
 import SavedCardsContext from "../../contexts/SavedCardsContext";
 

@@ -111,7 +111,7 @@
 }
 
 .newsCard__trash-icon:hover {
-  content: url("../../assets/trash-hover.png");
+  content: url("../../assets/trash-hover.svg");
 }
 
 .newsCard__bookmark-container_read-only {
@@ -147,11 +147,11 @@
 }
 
 .newsCard__bookmark_unmarked:hover {
-  content: url("../../assets/bookmark-hover.png");
+  content: url("../../assets/bookmark-hover.svg");
 }
 
 .newsCard__bookmark_read-only:hover {
-  content: url("../../assets/bookmark-hover.png");
+  content: url("../../assets/bookmark-hover.svg");
 }
 
 .newsCard__info {

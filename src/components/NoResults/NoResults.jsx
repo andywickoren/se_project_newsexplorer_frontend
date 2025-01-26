@@ -1,5 +1,5 @@
 import "./NoResults.css";
-import noResultsIcon from "../../assets/not-found_v1.png";
+import noResultsIcon from "../../assets/not-found.svg";
 
 function NoResults() {
   return (

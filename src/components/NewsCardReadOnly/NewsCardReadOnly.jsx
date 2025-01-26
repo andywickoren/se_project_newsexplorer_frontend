@@ -1,4 +1,4 @@
-import bookmarkUnmarked from "../../assets/bookmark-unmarked.png";
+import bookmarkUnmarked from "../../assets/bookmark-unmarked.svg";
 import bookmarkContainer from "../../assets/bookmark-container.png";
 import { useState } from "react";
 import NewsCard from "../NewsCard/NewsCard";

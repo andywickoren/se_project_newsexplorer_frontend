@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import mainSignin from "../../assets/main-signin.png";
+import mainSignin from "../../assets/user-rectangle.svg";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";

@@ -1,8 +1,8 @@
-import userRectangleSavedNews from "../../assets/user-rectangle-saved-news.png";
+import userRectangleSavedNews from "../../assets/user-rectangle-saved-news.svg";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
-import union from "../../assets/union.png";
+import union from "../../assets/union.svg";
 
 function NavbarSavedNews() {
   const { currentUser } = useContext(CurrentUserContext);

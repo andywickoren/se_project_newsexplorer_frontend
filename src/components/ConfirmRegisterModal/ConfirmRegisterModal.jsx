@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ConfirmRegisterModal.css";
-import close from "../../assets/close.png";
+import close from "../../assets/close.svg";
 
 function ConfirmRegisterModal({ openSigninModal, handleCloseClick }) {
   console.log(handleCloseClick);

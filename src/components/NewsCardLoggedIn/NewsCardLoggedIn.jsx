@@ -1,5 +1,5 @@
-import bookmarkUnmarked from "../../assets/bookmark-unmarked.png";
-import bookmarkMarked from "../../assets/bookmark-marked.png";
+import bookmarkUnmarked from "../../assets/bookmark-unmarked.svg";
+import bookmarkMarked from "../../assets/bookmark-marked.svg";
 import bookmarkContainer from "../../assets/bookmark-container.png";
 import SavedCardsContext from "../../contexts/SavedCardsContext";
 import { useContext } from "react";

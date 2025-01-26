@@ -1,6 +1,6 @@
 import "./Footer.css";
-import githubIcon from "../../assets/github-icon.png";
-import facebookIcon from "../../assets/facebook6-icon.png";
+import githubIcon from "../../assets/github-icon.svg";
+import facebookIcon from "../../assets/facebook6-icon.svg";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
