@@ -60,6 +60,33 @@
   transition: opacity 0.3s ease;
 }
 
+.newsCard__label-bookmark-read-only {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  height: 40px;
+  width: 182px;
+  /* padding: 0 22px; */
+  margin: 24px;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  right: 50px;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.newsCard__label-bookmark-read-only_hovered {
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+}
+
 .newsCard__label_delete_on-trash-hover {
   display: block;
   opacity: 1;
@@ -87,6 +114,20 @@
   content: url("../../assets/trash-hover.png");
 }
 
+.newsCard__bookmark-container_read-only {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 24px;
+  cursor: pointer;
+}
+
 .newsCard__bookmark-container {
   position: relative;
   top: -280px;
@@ -100,7 +141,16 @@
   cursor: pointer;
 }
 
+.newsCard__bookmark_read-only {
+  top: 0;
+  right: -7px;
+}
+
 .newsCard__bookmark_unmarked:hover {
+  content: url("../../assets/bookmark-hover.png");
+}
+
+.newsCard__bookmark_read-only:hover {
   content: url("../../assets/bookmark-hover.png");
 }
 

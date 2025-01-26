@@ -1,11 +1,11 @@
-import "./Main.css";
+import "./CardSection.css";
 import NewsCard from "../NewsCard/NewsCard";
 import showMore from "../../assets/show-more.png";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Header from "../Header/Header";
 import Results from "../Results/Results";
 
-function Main({
+function CardSection({
   newsCards,
   handleSigninClick,
   handleSearch,
@@ -14,15 +14,17 @@ function Main({
   isLoggedIn,
 }) {
   return (
-    <div className={`main ${isLoading && "main__is-loading"}`}>
+    <section
+      className={`card-section ${isLoading && "card-section__is-loading"}`}
+    >
       <Results
         newsCards={newsCards}
         isLoading={isLoading}
         noResults={noResults}
         isLoggedIn={isLoggedIn}
       />
-    </div>
+    </section>
   );
 }
 
-export default Main;
+export default CardSection;

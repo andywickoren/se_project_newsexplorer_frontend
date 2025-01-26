@@ -38,6 +38,10 @@
   border: none;
 }
 
+.about__show-more-button:hover {
+  background-color: #e8e8e8;
+}
+
 @media (max-width: 1856px) {
   .about {
     max-width: 1240px;

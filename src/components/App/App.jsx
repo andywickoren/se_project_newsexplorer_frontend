@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import Main from "../Main/Main";
+import CardSection from "../CardSection/CardSection";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 import SavedNews from "../SavedNews/SavedNews";
@@ -161,10 +161,6 @@ function App() {
     console.log("you submitted bro");
   }
 
-  console.log(keywords);
-
-  console.log(newsCards);
-
   return (
     <LayoutContext.Provider value={layout}>
       <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
@@ -182,15 +178,17 @@ function App() {
                       isLoggedIn={isLoggedIn}
                       setKeywords={setKeywords}
                     ></Header>
-                    {(isLoading || hasNoResults || newsCards.length > 0) && (
-                      <Main
-                        newsCards={newsCards}
-                        isLoading={isLoading}
-                        noResults={hasNoResults}
-                        isLoggedIn={isLoggedIn}
-                      />
-                    )}
-                    <About></About>
+                    <main className="main-content">
+                      {(isLoading || hasNoResults || newsCards.length > 0) && (
+                        <CardSection
+                          newsCards={newsCards}
+                          isLoading={isLoading}
+                          noResults={hasNoResults}
+                          isLoggedIn={isLoggedIn}
+                        />
+                      )}
+                      <About></About>
+                    </main>
                   </>
                 }
               />

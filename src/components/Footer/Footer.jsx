@@ -18,9 +18,9 @@ function Footer() {
     <footer className="footer">
       {!isSmallScreen ? (
         <div className="footer__full-size">
-          <div className="footer__fullsize-copyright">
+          <p className="footer__fullsize-copyright">
             © 2024 Supersite, Powered by News API
-          </div>
+          </p>
           <div className="footer__fullsize-options">
             <Link to="/" className="footer__link">
               <button className="footer__fullsize-options-home">Home</button>

@@ -93,7 +93,7 @@ function RegisterModal({
           value={email}
           onChange={handleEmailChange}
         />
-        <span className="modal__error-message modal__error-message_email">
+        <span className="modal__error-message modal__error-message_type-email">
           {emailError}
         </span>
       </div>
@@ -114,7 +114,7 @@ function RegisterModal({
           onChange={handlePasswordChange}
         />
 
-        <span className="modal__error-message modal__error-message_password">
+        <span className="modal__error-message modal__error-message_type-password">
           {passwordError}
         </span>
       </div>
@@ -131,13 +131,13 @@ function RegisterModal({
           value={username}
           onChange={handleUsernameChange}
         />
-        <span className="modal__error-message modal__error-message_username">
+        <span className="modal__error-message modal__error-message_type-username">
           {usernameError}
         </span>
       </div>
 
       <div className="modal__buttons-wrapper">
-        <span className="modal__error-message_register-error">
+        <span className="modal__error-message_type-register-error">
           {submissionError}
         </span>
         <button

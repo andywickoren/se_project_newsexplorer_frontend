@@ -33,9 +33,9 @@ function SavedNewsHeader() {
     <div className="saved-news-header">
       <div className="saved-news-header__content">
         <p className="saved-news-header__label">Saved articles</p>
-        <h2 className="saved-news-header__title">
+        <h1 className="saved-news-header__title">
           {currentUser.name}, you have {savedCards.length} saved articles
-        </h2>
+        </h1>
         <p
           className="saved-news-header__caption"
           onClick={(e) => {

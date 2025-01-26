@@ -1,16 +1,17 @@
 import "./NewsCardList.css";
-import { useState } from "react";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import SavedCardsContext from "../../contexts/SavedCardsContext";
 import { useLayout } from "../../contexts/LayoutContext";
 import NewsCardLoggedIn from "../NewsCardLoggedIn/NewsCardLoggedIn";
 import NewsCardSaved from "../NewsCardSaved/NewsCardSaved";
+import NewsCardReadOnly from "../NewsCardReadOnly/NewsCardReadOnly";
 
 function NewsCardList({ newsCards, isLoggedIn }) {
   const layout = useLayout();
-  const { savedCards, setSavedCards } = useContext(SavedCardsContext);
+  const { savedCards } = useContext(SavedCardsContext);
   const [cardsToShow, setCardsToShow] = useState(3);
   const renderedCards = newsCards.slice(0, cardsToShow);
+
   const handleShowMore = () => {
     setCardsToShow((prevCount) => prevCount + 3);
   };
@@ -45,18 +46,33 @@ function NewsCardList({ newsCards, isLoggedIn }) {
                   isLoggedIn={isLoggedIn}
                 />
               ))
-            : renderedCards.map((card) => (
-                <NewsCardLoggedIn
-                  name={card.name}
-                  url={card.imageUrl}
-                  key={card.name}
-                  description={card.description}
-                  date={card.date}
-                  author={card.author}
-                  query={card.query}
-                />
-              ))}
+            : renderedCards.map((card) =>
+                isLoggedIn ? (
+                  <NewsCardLoggedIn
+                    name={card.name}
+                    url={card.imageUrl}
+                    key={card.name}
+                    description={card.description}
+                    date={card.date}
+                    author={card.author}
+                    query={card.query}
+                  />
+                ) : (
+                  <NewsCardReadOnly
+                    name={card.name}
+                    url={card.imageUrl}
+                    key={card.name}
+                    description={card.description}
+                    date={card.date}
+                    author={card.author}
+                    query={card.query}
+                    isLoggedIn={isLoggedIn}
+                  />
+                )
+              )}
         </ul>
+
+        {/* Show More Button */}
         {layout !== "SavedNews" && (
           <div className="news-cards__show-more-button-container">
             <button

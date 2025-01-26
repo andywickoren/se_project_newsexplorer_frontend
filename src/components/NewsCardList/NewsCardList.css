@@ -55,6 +55,10 @@
   position: relative;
 }
 
+.news-cards__show-more-button:hover {
+  background-color: #e8e8e8;
+}
+
 @media (max-width: 1856px) {
   .news-cards__content {
     max-width: 1240px;

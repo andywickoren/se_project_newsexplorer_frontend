@@ -9,7 +9,7 @@ function About() {
     setIsReduced(aboutSectionLength);
   };
   return (
-    <div className="about">
+    <section className="about">
       <div className="about__avatar">
         <Avatar></Avatar>
       </div>
@@ -75,7 +75,7 @@ function About() {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

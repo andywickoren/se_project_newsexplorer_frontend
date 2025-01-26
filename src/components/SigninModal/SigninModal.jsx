@@ -69,11 +69,11 @@ function SigninModal({ openRegisterModal, onLogin, handleCloseClick, isOpen }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <span className="modal__error-message modal__error-message_password">
+        <span className="modal__error-message modal__error-message_type-password">
           {passwordError}
         </span>
       </div>
-      <span className="modal__error-message-login-error">
+      <span className="modal__error-message modal__error-message_type-login-error">
         {otherBackendErrors}
       </span>
       <div className="modal__buttons-wrapper">

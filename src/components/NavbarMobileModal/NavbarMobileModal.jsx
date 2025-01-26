@@ -1,5 +1,5 @@
 import "./NavbarMobileModal.css";
-import close from "../../assets/mobile-close.png";
+import close from "../../assets/mobile-close.svg";
 import { Link } from "react-router-dom";
 import { useLayout } from "../../contexts/LayoutContext";
 

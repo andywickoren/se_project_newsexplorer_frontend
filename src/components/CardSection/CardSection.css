@@ -1,35 +1,35 @@
-.main {
+.card-section {
   padding: 80px 104px;
   background-color: #f5f6f7;
   display: flex;
   justify-content: center;
 }
 
-.main__is-loading {
+.card-section__is-loading {
   padding: 0;
 }
 
-.main__heading {
+/* .main__heading {
   margin: 0 0 32px 0;
   font-family: "Roboto Slab";
   font-weight: 400;
   font-size: 40px;
-}
+} */
 
-.main__show-more-button-text {
+/* .main__show-more-button-text {
   align-self: center;
   font-family: "Roboto Slab", serif;
   position: absolute;
-}
+} */
 
 @media (max-width: 1025px) {
-  .main {
+  .card-section {
     padding: 32px 35px;
   }
 }
 
 @media (max-width: 765px) {
-  .main {
+  .card-section {
     padding: 16px;
   }
 }
