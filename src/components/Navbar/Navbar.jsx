@@ -12,8 +12,6 @@ import NavbarSavedNews from "../NavbarSavedNews/NavbarSavedNews";
 function Navbar({ handleSigninClick, isLoggedIn, logout }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const layout = useLayout();
-  console.log("NAVBAR isLoggedIn: ", isLoggedIn);
-  console.log("Navbar Layout: =============>>", layout);
   const { currentUser } = useContext(CurrentUserContext);
 
   useEffect(() => {
@@ -27,7 +25,7 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
   }, []);
 
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <div
         className={`navbar__content ${
           layout === "SavedNews" ? "navbar__content_saved-news" : ""
@@ -87,7 +85,7 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
           </div>
         )}
       </div>
-    </div>
+    </nav>
   );
 }
 
