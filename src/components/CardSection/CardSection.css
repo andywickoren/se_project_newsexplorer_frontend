@@ -9,19 +9,6 @@
   padding: 0;
 }
 
-/* .main__heading {
-  margin: 0 0 32px 0;
-  font-family: "Roboto Slab";
-  font-weight: 400;
-  font-size: 40px;
-} */
-
-/* .main__show-more-button-text {
-  align-self: center;
-  font-family: "Roboto Slab", serif;
-  position: absolute;
-} */
-
 @media (max-width: 1025px) {
   .card-section {
     padding: 32px 35px;

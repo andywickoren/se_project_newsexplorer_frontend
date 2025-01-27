@@ -9,7 +9,7 @@
 .preloader__circle-preloader {
   position: absolute;
   top: 0px;
-  left: 0;
+  left: -40px;
   right: 0;
   bottom: 0;
   margin: auto;
@@ -41,4 +41,6 @@
   font-size: 18px;
   line-height: 24px;
   color: #b6bcbf;
+  width: 280px;
+  text-align: center;
 }

@@ -22,7 +22,7 @@ function ConfirmRegisterModal({ openSigninModal, handleCloseClick }) {
         >
           <img
             src={close}
-            alt=""
+            alt="close button"
             className="confirm-register-modal__close-icon"
           />
         </button>

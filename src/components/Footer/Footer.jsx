@@ -56,7 +56,7 @@ function Footer() {
               <img
                 className="footer__fullsize-options-facebook-icon"
                 src={facebookIcon}
-                alt="Facebook"
+                alt="Facebook icon"
               ></img>
             </a>
           </div>
@@ -76,7 +76,7 @@ function Footer() {
                 <img
                   className="footer__mobile-options-github-icon"
                   src={githubIcon}
-                  alt="GitHub"
+                  alt="GitHub icon"
                 ></img>
               </a>
               <a
@@ -87,7 +87,7 @@ function Footer() {
                 <img
                   className="footer__mobile-options-facebook-icon"
                   src={facebookIcon}
-                  alt="Facebook"
+                  alt="Facebook icon"
                 ></img>
               </a>
             </div>

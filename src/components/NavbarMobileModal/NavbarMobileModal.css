@@ -59,7 +59,7 @@
 
 .navbar-mobile-modal__home,
 .navbar-mobile-modal__saved-articles {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 56px;

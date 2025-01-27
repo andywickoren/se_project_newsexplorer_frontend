@@ -3,7 +3,7 @@ header h1 {
 }
 
 .header {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", serif;
   font-weight: 400;
   color: #fff;
   height: 576px;

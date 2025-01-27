@@ -40,12 +40,14 @@ function NewsCardLoggedIn({ name, url, description, date, author, query }) {
           className="newsCard__bookmark newsCard__bookmark_unmarked"
           src={bookmarkUnmarked}
           onClick={handleSave}
+          alt="unmarked save button"
         />
       ) : (
         <img
           className="newsCard__bookmark newsCard__bookmark_marked"
           src={bookmarkMarked}
           onClick={handleSave}
+          alt="marked save button"
         />
       )}
     </NewsCard>

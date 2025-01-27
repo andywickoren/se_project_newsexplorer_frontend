@@ -12,20 +12,20 @@
 
 .saved-news-header__label {
   color: #1a1b2280;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;
 }
 
 .saved-news-header__title {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", serif;
   font-weight: 400;
   font-size: 30px;
   width: 336px;
 }
 
 .saved-news-header__caption {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
 
