@@ -21,33 +21,33 @@ function NewsCardSaved({ name, url, description, date, author, query }) {
       author={author}
       description={description}
     >
-      <div className="newsCard__label">
+      <div className="news-card__label">
         <p
-          className={`newsCard__keyword ${
-            isHovered ? "newsCard__keyword_on-trash-hover" : ""
+          className={`news-card__keyword ${
+            isHovered ? "news-card__keyword_on-trash-hover" : ""
           }`}
         >
           {query.charAt(0).toUpperCase() + query.slice(1)}
         </p>
       </div>
       <div
-        className="newsCard__trash-container"
+        className="news-card__trash-container"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <img
           src={trashIcon}
           alt="trash icon"
-          className="newsCard__trash-icon"
+          className="news-card__trash-icon"
           onClick={() => handleDelete(uniqueKey)}
         />
       </div>
       <div
-        className={`newsCard__label_delete ${
-          isHovered ? "newsCard__label_delete_on-trash-hover" : ""
+        className={`news-card__label_delete ${
+          isHovered ? "news-card__label_delete_on-trash-hover" : ""
         }`}
       >
-        <p className="newsCard__label_delete-warning">Remove from saved</p>
+        <p className="news-card__label_delete-warning">Remove from saved</p>
       </div>
     </NewsCard>
   );

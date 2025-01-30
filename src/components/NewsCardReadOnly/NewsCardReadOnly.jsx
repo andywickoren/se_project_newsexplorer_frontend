@@ -1,5 +1,4 @@
 import bookmarkUnmarked from "../../assets/bookmark-unmarked.svg";
-import bookmarkContainer from "../../assets/bookmark-container.png";
 import { useState } from "react";
 import NewsCard from "../NewsCard/NewsCard";
 
@@ -29,27 +28,22 @@ function NewsCardReadOnly({
       author={author}
     >
       <div
-        className="newsCard__bookmark-container_read-only"
+        className="news-card__bookmark-container_read-only"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* <img
-          className="newsCard__bookmark-container"
-          src={bookmarkContainer}
-          alt="save-icon read only"
-        /> */}
         <img
-          className="newsCard__bookmark newsCard__bookmark_read-only"
+          className="news-card__bookmark news-card__bookmark_read-only"
           src={bookmarkUnmarked}
           alt="bookmark unmarked"
         />
       </div>
       <div
-        className={`newsCard__label-bookmark-read-only ${
-          isHovered ? "newsCard__label-bookmark-read-only_hovered" : ""
+        className={`news-card__label-bookmark-read-only ${
+          isHovered ? "news-card__label-bookmark-read-only_hovered" : ""
         }`}
       >
-        <p className="newsCard__login-message">Sign in to save</p>
+        <p className="news-card__login-message">Sign in to save</p>
       </div>
     </NewsCard>
   );

@@ -2,6 +2,7 @@ import "./SavedNews.css";
 import NavBar from "../Navbar/Navbar";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import NewsCardList from "../NewsCardList/NewsCardList";
+import "./SavedNews.css";
 
 function SavedNews({
   newsCards,
@@ -18,7 +19,9 @@ function SavedNews({
         handleSigninClick={handleSigninClick}
       />
       <SavedNewsHeader keywords={keywords} />
-      <NewsCardList newsCards={newsCards}></NewsCardList>
+      <div className="saved-news-cards">
+        <NewsCardList newsCards={newsCards}></NewsCardList>
+      </div>
     </>
   );
 }

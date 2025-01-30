@@ -20,13 +20,11 @@ function Results({ newsCards, isLoading, noResults, isLoggedIn }) {
     );
   } else if (newsCards.length > 0) {
     content = (
-      <div className="results__news-cards">
-        <NewsCardList isLoggedIn={isLoggedIn} newsCards={newsCards} />
-      </div>
+      <NewsCardList isLoggedIn={isLoggedIn} newsCards={newsCards} />
     );
   }
 
-  return <div className="results">{content}</div>;
+  return <>{content}</>;
 }
 
 export default Results;

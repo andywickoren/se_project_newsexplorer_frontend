@@ -9,6 +9,7 @@ function Header({
   isLoggedIn,
   setKeywords,
   logout,
+  isLoading,
 }) {
   const layout = "Home";
   return (
@@ -32,6 +33,7 @@ function Header({
         </div>
         <div className="header__search-form">
           <SearchForm
+            isLoading={isLoading}
             onSearch={handleSearch}
             setKeywords={setKeywords}
           ></SearchForm>

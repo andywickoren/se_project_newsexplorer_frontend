@@ -37,7 +37,7 @@ function NavbarMobileModal({
             <p className="navbar-mobile-modal_title">NewsExplorer</p>
             <img
               src={close}
-              alt=""
+              alt="close button"
               className="navbar-mobile-modal__close"
               onClick={closeActiveModal}
             />

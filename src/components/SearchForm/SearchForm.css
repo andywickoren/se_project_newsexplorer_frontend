@@ -57,6 +57,10 @@
   background-color: #0056b3;
 }
 
+.search-form__button_active {
+  background-color: #0056b3;
+}
+
 .search-form__error-message {
   color: #ff0000;
   font-family: "Inter", sans-serif;

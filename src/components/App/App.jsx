@@ -177,6 +177,7 @@ function App() {
                       handleSearch={handleSearch}
                       isLoggedIn={isLoggedIn}
                       setKeywords={setKeywords}
+                      isLoading={isLoading}
                     ></Header>
                     <main className="main-content">
                       {(isLoading || hasNoResults || newsCards.length > 0) && (

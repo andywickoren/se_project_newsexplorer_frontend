@@ -1,14 +1,14 @@
 import "./SearchForm.css";
 import { useState, useEffect } from "react";
 
-function SearchForm({ onSearch, setKeywords }) {
+function SearchForm({ onSearch, setKeywords, isLoading }) {
   const [query, setQuery] = useState("");
   const [searchError, setSearchError] = useState("");
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const updateScreenSize = () => {
-      setIsSmallScreen(window.innerWidth <= 685);
+      setIsSmallScreen(window.innerWidth <= 735);
     };
     window.addEventListener("resize", updateScreenSize);
     updateScreenSize();
@@ -50,7 +50,12 @@ function SearchForm({ onSearch, setKeywords }) {
             onChange={handleChange}
           />
           <span className="search-form__error-message">{searchError}</span>
-          <button type="submit" className="search-form__button">
+          <button
+            type="submit"
+            className={`search-form__button ${
+              isLoading ? "search-form__button_active" : ""
+            }`}
+          >
             Search
           </button>
         </div>

@@ -8,7 +8,7 @@ function Footer() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   useEffect(() => {
     const updateScreenSize = () => {
-      setIsSmallScreen(window.innerWidth <= 685);
+      setIsSmallScreen(window.innerWidth <= 767);
     };
     window.addEventListener("resize", updateScreenSize);
     updateScreenSize();

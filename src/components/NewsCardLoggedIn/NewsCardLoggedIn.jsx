@@ -31,20 +31,20 @@ function NewsCardLoggedIn({ name, url, description, date, author, query }) {
       author={author}
     >
       <img
-        className="newsCard__bookmark-container"
+        className="news-card__bookmark-container"
         src={bookmarkContainer}
         alt={!isSaved ? "unsaved icon" : "saved icon"}
       />
       {!isSaved ? (
         <img
-          className="newsCard__bookmark newsCard__bookmark_unmarked"
+          className="news-card__bookmark news-card__bookmark_unmarked"
           src={bookmarkUnmarked}
           onClick={handleSave}
           alt="unmarked save button"
         />
       ) : (
         <img
-          className="newsCard__bookmark newsCard__bookmark_marked"
+          className="news-card__bookmark news-card__bookmark_marked"
           src={bookmarkMarked}
           onClick={handleSave}
           alt="marked save button"

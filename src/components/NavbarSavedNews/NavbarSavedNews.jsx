@@ -8,12 +8,14 @@ function NavbarSavedNews() {
   const { currentUser } = useContext(CurrentUserContext);
   return (
     <div className="navbar__saved-news-options">
-      <p className="navbar__saved-articles-text">Saved Articles</p>
+      <p className="navbar__saved-articles-text navbar__link_active">
+        Saved Articles
+      </p>
       <Link to="/" className="navbar__link">
         <button className="navbar__user-button">
           <img
             src={userRectangleSavedNews}
-            alt=""
+            alt="user button"
             className={"navbar__user-rectangle_saved-news"}
           />
 
@@ -22,7 +24,7 @@ function NavbarSavedNews() {
             {currentUser.name || "User"}
             <img
               src={union}
-              alt=""
+              alt="user"
               className="navbar__user-button-union_saved-news"
             />
           </div>

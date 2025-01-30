@@ -1,13 +1,12 @@
-.newsCard {
+.news-card {
   background-color: #fff;
   max-height: 576px;
-  width: 400px;
   border-radius: 25px;
   position: relative;
   overflow: hidden;
 }
 
-.newsCard__image-container {
+.news-card__image-container {
   height: 292px;
   width: 100%;
   border-top-left-radius: 25px;
@@ -15,17 +14,17 @@
   overflow: hidden;
 }
 
-.newsCard__image-container_saved-news {
+.news-card__image-container_saved-news {
   padding: 8px;
 }
 
-.newsCard__image {
+.news-card__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.newsCard__label {
+.news-card__label {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -42,7 +41,7 @@
   max-width: 180px;
 }
 
-.newsCard__label_delete {
+.news-card__label_delete {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -60,7 +59,7 @@
   transition: opacity 0.3s ease;
 }
 
-.newsCard__label-bookmark-read-only {
+.news-card__label-bookmark-read-only {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -70,7 +69,6 @@
   align-items: center;
   height: 40px;
   width: 182px;
-  /* padding: 0 22px; */
   margin: 24px;
   border-radius: 10px;
   position: absolute;
@@ -81,22 +79,22 @@
   transition: opacity 0.3s ease;
 }
 
-.newsCard__label-bookmark-read-only_hovered {
+.news-card__label-bookmark-read-only_hovered {
   display: flex;
   justify-content: center;
   opacity: 1;
 }
 
-.newsCard__label_delete_on-trash-hover {
+.news-card__label_delete_on-trash-hover {
   display: block;
   opacity: 1;
 }
 
-.newsCard__keyword_on-trash-hover {
+.news-card__keyword_on-trash-hover {
   max-width: 50px;
 }
 
-.newsCard__trash-container {
+.news-card__trash-container {
   display: flex;
   align-items: center;
   height: 40px;
@@ -110,11 +108,11 @@
   cursor: pointer;
 }
 
-.newsCard__trash-icon:hover {
+.news-card__trash-icon:hover {
   content: url("../../assets/trash-hover.svg");
 }
 
-.newsCard__bookmark-container_read-only {
+.news-card__bookmark-container_read-only {
   display: flex;
   align-items: center;
   height: 40px;
@@ -128,44 +126,44 @@
   cursor: pointer;
 }
 
-.newsCard__bookmark-container {
+.news-card__bookmark-container {
   position: relative;
   top: -280px;
   right: -347px;
 }
 
-.newsCard__bookmark {
+.news-card__bookmark {
   position: relative;
   top: -289px;
   right: -316px;
   cursor: pointer;
 }
 
-.newsCard__bookmark_read-only {
+.news-card__bookmark_read-only {
   top: 0;
   right: -7px;
 }
 
-.newsCard__bookmark_unmarked:hover {
+.news-card__bookmark_unmarked:hover {
   content: url("../../assets/bookmark-hover.svg");
 }
 
-.newsCard__bookmark_read-only:hover {
+.news-card__bookmark_read-only:hover {
   content: url("../../assets/bookmark-hover.svg");
 }
 
-.newsCard__info {
+.news-card__info {
   padding: 20px 24px 0 24px;
 }
 
-.newsCard__date {
+.news-card__date {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
   color: #b6bcbf;
   margin: 0 0 12px 0;
 }
 
-.newsCard__title {
+.news-card__title {
   margin: 0 0 16px 0;
   font-family: "Roboto Slab", serif;
   font-size: 26px;
@@ -181,11 +179,11 @@
   word-wrap: break-word;
 }
 
-.newsCard__details {
+.news-card__details {
   height: 0;
 }
 
-.newsCard__description {
+.news-card__description {
   font-family: "Roboto", sans-serif;
   margin: 0 0 18px 0;
   display: -webkit-box;
@@ -195,7 +193,7 @@
   text-overflow: ellipsis;
 }
 
-.newsCard__footer {
+.news-card__footer {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.4px;
   color: #b6bcbf;
@@ -203,50 +201,43 @@
 }
 
 @media (max-width: 1025px) {
-  .newsCard {
-    height: 420px;
-    width: 224px;
+  .news-card {
     border-radius: 25px;
   }
 
-  .newsCard__bookmark-container {
+  .news-card__bookmark-container {
     top: -140px;
     right: -174px;
   }
 
-  .newsCard__bookmark {
+  .news-card__bookmark {
     top: -148px;
     right: -142px;
   }
 
-  .newsCard__image-container {
+  .news-card__image-container {
     height: 150px;
   }
-  .newsCard__info {
+  .news-card__info {
     padding: 16px;
   }
 
-  .newsCard__title {
+  .news-card__title {
     font-size: 22px;
   }
 }
 
 @media (max-width: 735px) {
-  .newsCard {
-    height: 440px;
-    width: 288px;
-  }
-
-  .newsCard__bookmark-container {
+  .news-card__bookmark-container {
     top: -186px;
     right: -232px;
   }
 
-  .newsCard__bookmark {
+  .news-card__bookmark {
     top: -194px;
     right: -200px;
   }
-  .newsCard__image-container {
+  .news-card__image-container {
     height: 196px;
   }
 }
