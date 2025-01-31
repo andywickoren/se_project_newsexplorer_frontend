@@ -11,24 +11,21 @@ function NavbarSavedNews() {
       <p className="navbar__saved-articles-text navbar__link_active">
         Saved Articles
       </p>
-      <Link to="/" className="navbar__link">
-        <button className="navbar__user-button">
+      <Link to="/" className="navbar__link navbar__user-button">
+        <img
+          src={userRectangleSavedNews}
+          alt="user button"
+          className="navbar__user-rectangle_saved-news"
+        />
+        <div className="navbar__user-button-elements">
+          <p className="navbar__user-button-text_saved-news"></p>
+          {currentUser.name || "User"}
           <img
-            src={userRectangleSavedNews}
-            alt="user button"
-            className={"navbar__user-rectangle_saved-news"}
+            src={union}
+            alt="user"
+            className="navbar__user-button-union_saved-news"
           />
-
-          <div className="navbar__user-button-elements">
-            <p className="navbar__user-button-text_saved-news"></p>
-            {currentUser.name || "User"}
-            <img
-              src={union}
-              alt="user"
-              className="navbar__user-button-union_saved-news"
-            />
-          </div>
-        </button>
+        </div>
       </Link>
     </div>
   );

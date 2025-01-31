@@ -7,10 +7,11 @@ function NavbarMain({ logout }) {
   const { currentUser } = useContext(CurrentUserContext);
   return (
     <div className="navbar__logged-in-options">
-      <Link to="/saved-news" className="navbar__link">
-        <button className="navbar__saved-articles-button">
-          Saved Articles
-        </button>
+      <Link
+        to="/saved-news"
+        className="navbar__link navbar__saved-articles-button"
+      >
+        Saved Articles
       </Link>
       <button className="navbar__user-button">
         <img
@@ -25,5 +26,4 @@ function NavbarMain({ logout }) {
     </div>
   );
 }
-
 export default NavbarMain;

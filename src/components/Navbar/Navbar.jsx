@@ -31,8 +31,16 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
           layout === "SavedNews" ? "navbar__content_saved-news" : ""
         }`}
       >
-        <Link to="/" className="navbar__link">
-          <div
+        <Link
+          to="/"
+          className={`navbar__link navbar__news-explorer-button ${
+            layout === "SavedNews"
+              ? "navbar__news-explorer-button_saved-news"
+              : ""
+          }`}
+        >
+          NewsExplorer
+          {/* <div
             className={`navbar__news-explorer-button ${
               layout === "SavedNews"
                 ? "navbar__news-explorer-button_saved-news"
@@ -40,7 +48,7 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
             }`}
           >
             NewsExplorer
-          </div>
+          </div> */}
         </Link>
 
         {isSmallScreen ? (
@@ -51,14 +59,13 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
           ></NavbarMobile>
         ) : (
           <div className="navbar__options">
-            <Link to="/" className="navbar__link">
-              <button
-                className={`navbar__home-button ${
-                  layout === "SavedNews" ? "navbar__home-button_saved-news" : ""
-                }`}
-              >
-                Home
-              </button>
+            <Link
+              to="/"
+              className={`navbar__link navbar__home-button ${
+                layout === "SavedNews" ? "navbar__home-button_saved-news" : ""
+              }`}
+            >
+              Home
             </Link>
             {isLoggedIn ? (
               layout !== "SavedNews" ? (

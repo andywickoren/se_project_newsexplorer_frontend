@@ -30,7 +30,7 @@
 }
 
 .navbar__link {
-  display: contents;
+  /* display: contents; */
   text-decoration: none;
 }
 
@@ -52,7 +52,7 @@
   align-items: center;
 }
 
-.navbar__home-button {
+/* .navbar__home-button {
   margin-right: 76px;
   border: none;
   background-color: transparent;
@@ -60,6 +60,23 @@
   height: 80px;
   border-bottom: 3px solid #fff;
   width: 70px;
+} */
+
+.navbar__home-button {
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif !important;
+  margin-right: 76px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  height: 80px;
+  border-bottom: 3px solid #fff;
+  width: 70px;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 80px;
+  text-decoration: none;
 }
 
 .navbar__home-button_saved-news {
@@ -96,6 +113,9 @@
   cursor: pointer;
   font-size: 18px;
   margin-right: 64px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 .navbar__link_active {
