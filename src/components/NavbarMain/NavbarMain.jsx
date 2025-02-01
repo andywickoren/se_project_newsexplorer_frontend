@@ -13,12 +13,7 @@ function NavbarMain({ logout }) {
       >
         Saved Articles
       </Link>
-      <button className="navbar__user-button">
-        <img
-          src={userRectangle}
-          alt="sign out button"
-          className="navbar__user-rectangle"
-        />
+      <button className="navbar__button navbar__button_type_user-button">
         <p className="navbar__user-button-logout" onClick={logout}>
           Sign out
         </p>

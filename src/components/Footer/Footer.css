@@ -9,11 +9,12 @@
 }
 
 .footer__full-size {
+  box-sizing: border-box;
   max-width: 1660px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 24px 40px 18px;
+  padding: 24px 104px 18px;
   font-family: "Roboto", sans-serif;
 }
 
@@ -94,13 +95,13 @@
   color: #b6bcbf;
 }
 
-@media (max-width: 1856px) {
+@media (max-width: 1025px) {
   .footer__full-size {
-    max-width: 1240px;
+    padding: 24px 40px 18px;
   }
 }
 
-@media (max-width: 685px) {
+@media (max-width: 768px) {
   .footer {
     display: block;
   }

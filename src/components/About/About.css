@@ -1,7 +1,8 @@
 .about {
   display: flex;
-  margin: 80px 104px;
+  padding: 80px 104px;
   max-width: 1660px;
+  box-sizing: border-box;
   justify-self: center;
 }
 
@@ -56,7 +57,11 @@
 
 @media (max-width: 1025px) {
   .about {
-    margin: 40px;
+    padding: 61px 40px;
+  }
+
+  .about__author {
+    padding: 0 16px;
   }
 
   .about__avatar {

@@ -46,30 +46,44 @@ function NavbarMobileModal({
         <div className="navbar-mobile-modal__buttons">
           {isLoggedIn ? (
             <>
-              <Link to="/saved-news" className="navbar-mobile-modal__link">
-                <p
-                  className="navbar-mobile-modal__saved-articles navbar-mobile-modal__saved-articles_logged-in"
-                  onClick={closeActiveModal}
-                >
-                  Saved Articles
-                </p>
-              </Link>
-              {layout !== "SavedNews" ? (
-                <button
-                  className="navbar-mobile-modal__signout"
-                  onClick={handleMobileSignout}
-                >
-                  <p className="navbar-mobile-modal__signout-text">Sign out</p>
-                </button>
-              ) : (
-                <Link to="/" className="navbar-mobile-modal__link">
+              {layout === "SavedNews" ? (
+                <>
+                  <Link to="/" className="navbar-mobile-modal__link">
+                    <p
+                      className="navbar-mobile-modal__home"
+                      onClick={closeActiveModal}
+                    >
+                      Home
+                    </p>
+                  </Link>
                   <button
-                    className="navbar-mobile-modal__home-button"
-                    onClick={closeActiveModal}
+                    className="navbar-mobile-modal__signout"
+                    onClick={handleMobileSignout}
                   >
-                    <p className="navbar-mobile-modal__signin-text">Home</p>
+                    <p className="navbar-mobile-modal__signout-text">
+                      Sign out
+                    </p>
                   </button>
-                </Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/saved-news" className="navbar-mobile-modal__link">
+                    <p
+                      className="navbar-mobile-modal__saved-articles navbar-mobile-modal__saved-articles_logged-in"
+                      onClick={closeActiveModal}
+                    >
+                      Saved Articles
+                    </p>
+                  </Link>
+                  <button
+                    className="navbar-mobile-modal__signout"
+                    onClick={handleMobileSignout}
+                  >
+                    <p className="navbar-mobile-modal__signout-text">
+                      Sign out
+                    </p>
+                  </button>
+                </>
               )}
             </>
           ) : (

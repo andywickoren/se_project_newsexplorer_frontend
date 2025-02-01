@@ -59,13 +59,16 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
           ></NavbarMobile>
         ) : (
           <div className="navbar__options">
-            <Link
-              to="/"
-              className={`navbar__link navbar__home-button ${
-                layout === "SavedNews" ? "navbar__home-button_saved-news" : ""
-              }`}
-            >
-              Home
+            <Link to="/" className="navbar__link">
+              <button
+                className={`navbar__link navbar__link_type_home-button ${
+                  layout === "SavedNews"
+                    ? "navbar__link_type_home-button_theme_dark"
+                    : ""
+                }`}
+              >
+                Home
+              </button>
             </Link>
             {isLoggedIn ? (
               layout !== "SavedNews" ? (
@@ -78,7 +81,7 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
               )
             ) : (
               <button
-                className="navbar__signin-button"
+                className="navbar__button navbar__button_type_signin"
                 onClick={handleSigninClick}
               >
                 <img
