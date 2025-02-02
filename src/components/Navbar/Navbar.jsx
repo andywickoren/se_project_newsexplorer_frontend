@@ -1,9 +1,6 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import mainSignin from "../../assets/user-rectangle.svg";
 import { useEffect, useState } from "react";
-// import { useContext } from "react";
-// import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { useLayout } from "../../contexts/LayoutContext";
 import NavbarMobile from "../NavbarMobile/NavbarMobile";
 import NavbarMain from "../NavbarMain/NavbarMain";
@@ -13,13 +10,6 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const layout = useLayout();
   const navbar = document.querySelector(".navbar");
-
-  // if (layout === "SavedNews") {
-  //   navbar.querySelector("");
-  // }
-  // console.log(layout);
-
-  // const { currentUser } = useContext(CurrentUserContext);
 
   useEffect(() => {
     console.log("useEffect - isLoggedIn:", isLoggedIn);
@@ -37,24 +27,12 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
         <Link
           to="/"
           className={`navbar__link navbar__news-explorer-button ${
-            // navbar__link_type_news-explorer-button
-            // navbar__link_type_button
-            // className="navbar__link navbar__button navbar__user-button navbar__button_type_user-button_theme_dark "
             layout === "SavedNews"
               ? "navbar__news-explorer-button_saved-news"
               : ""
           }`}
         >
           NewsExplorer
-          {/* <div
-            className={`navbar__news-explorer-button ${
-              layout === "SavedNews"
-                ? "navbar__news-explorer-button_saved-news"
-                : ""
-            }`}
-          >
-            NewsExplorer
-          </div> */}
         </Link>
 
         {isSmallScreen ? (

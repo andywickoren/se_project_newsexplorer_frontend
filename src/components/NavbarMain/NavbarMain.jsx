@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import userRectangle from "../../assets/user-rectangle.svg";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
