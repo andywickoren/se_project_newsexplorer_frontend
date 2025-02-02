@@ -14,6 +14,7 @@ import SavedCardsContext from "../../contexts/SavedCardsContext";
 import { LayoutContext } from "../../contexts/LayoutContext";
 import { useLocation } from "react-router-dom";
 
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("");
