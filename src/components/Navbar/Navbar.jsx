@@ -89,11 +89,6 @@ function Navbar({ handleSigninClick, isLoggedIn, logout }) {
                 className="navbar__button navbar__button_type_signin"
                 onClick={handleSigninClick}
               >
-                <img
-                  src={mainSignin}
-                  alt="sign in button"
-                  className="navbar__signin-image"
-                />
                 <p className="navbar__signin-button-text">Sign in</p>
               </button>
             )}

@@ -13,22 +13,16 @@ function NavbarSavedNews() {
       </p>
       <Link
         to="/"
-        className="navbar__link navbar__button navbar__user-button navbar__button_type_user-button_theme_dark "
+        className="navbar__link navbar__button navbar__button_type_user-button"
       >
         {/* <img
-          src={userRectangleSavedNews}
-          alt="user button"
-          className="navbar__user-rectangle_saved-news"
-        /> */}
-        <div className="navbar__user-button-elements">
-          <p className="navbar__user-button-text_theme_dark"></p>
-          {currentUser.name || "User"}
-          <img
-            src={union}
-            alt="user"
-            className="navbar__user-button-union_theme_dark"
-          />
-        </div>
+    src={userRectangleSavedNews}
+    alt="user button"
+    className="navbar__user-rectangle_saved-news"
+  /> */}
+        <p className="navbar__user-button-text"></p>
+        {currentUser.name || "User"}
+        <img src={union} alt="user" className="navbar__user-button-union" />
       </Link>
     </div>
   );

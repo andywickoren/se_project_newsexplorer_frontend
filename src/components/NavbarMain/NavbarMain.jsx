@@ -9,12 +9,12 @@ function NavbarMain({ logout }) {
     <div className="navbar__logged-in-options">
       <Link
         to="/saved-news"
-        className="navbar__link navbar__saved-articles-button"
+        className="navbar__link navbar__link_type_saved-articles-button"
       >
         Saved Articles
       </Link>
-      <button className="navbar__button navbar__button_type_user-button">
-        <p className="navbar__user-button-logout" onClick={logout}>
+      <button className="navbar__button navbar__button_type_logout">
+        <p className="navbar__user-button-logout-text" onClick={logout}>
           Sign out
         </p>
       </button>

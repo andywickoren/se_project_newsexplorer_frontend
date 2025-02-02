@@ -46,16 +46,6 @@
   align-items: center;
 }
 
-/* .navbar__home-button {
-  margin-right: 76px;
-  border: none;
-  background-color: transparent;
-  color: white;
-  height: 80px;
-  border-bottom: 3px solid #fff;
-  width: 70px;
-} */
-
 .navbar__link {
   text-decoration: none;
   background-color: transparent;
@@ -92,9 +82,9 @@
   font-weight: 500;
 }
 
-.navbar__user-button-text_theme_dark {
+/* .navbar__user-button-text_theme_dark {
   font-weight: 500;
-}
+} */
 
 /* .navbar__user-rectangle_saved-news {
   position: relative;
@@ -102,7 +92,7 @@
   align-self: center;
 } */
 
-.navbar__saved-articles-button {
+.navbar__link_type_saved-articles-button {
   border: none;
   background: transparent;
   color: #b6bcbf;
@@ -137,22 +127,45 @@
   background-color: transparent;
   color: white;
   font-weight: 500;
-}
-
-.navbar__button_type_user-button {
   width: 176px;
   height: 48px;
   border: 1px solid #fff;
   border-radius: 100px;
 }
 
-.navbar__button_type_user-button_theme_dark {
+.navbar__button_type_logout {
+  width: 176px;
+  height: 48px;
+  border: 1px solid #fff;
+  border-radius: 100px;
+}
+
+.navbar__button_type_user-button {
   color: #000;
   border: 1px solid #000;
   width: fit-content;
   max-width: 176px;
   border-radius: 100px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: fit-content;
 }
+
+/* .navbar__user-button-elements {
+  position: absolute;
+  align-self: center;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: black;
+  padding: 12px;
+} */
 
 /* .navbar__user-button {
   position: relative;
@@ -189,25 +202,11 @@
   color: white;
   font-weight: 500; */
 
-.navbar__user-button-elements {
-  /* position: absolute; */
+/* .navbar__user-button-text {
   align-self: center;
-  align-items: center;
-  gap: 10px;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  color: black;
-  padding: 12px;
-}
+} */
 
-.navbar__user-button-text_theme_dark {
-  align-self: center;
-}
-
-.navbar__user-button-logout {
+.navbar__user-button-logout-text {
   align-self: center;
   position: absolute;
 }
@@ -246,6 +245,11 @@
   .navbar__content {
     height: 66px;
     padding: 0 40px;
+  }
+
+  .navbar__link_type_home-button {
+    height: 66px;
+    line-height: 66px;
   }
 
   .navbar__saved-articles-button {

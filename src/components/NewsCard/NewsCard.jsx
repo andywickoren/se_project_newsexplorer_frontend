@@ -2,7 +2,7 @@ import "./NewsCard.css";
 
 function NewsCard({ name, url, date, description, author, children }) {
   return (
-    <div className="news-card">
+    <li className="news-card">
       <div className="news-card__image-container">
         <img src={url} alt={name} className="news-card__image" />
       </div>
@@ -13,7 +13,7 @@ function NewsCard({ name, url, date, description, author, children }) {
         <p className="news-card__description">{description}</p>
         <footer className="news-card__footer">{author}</footer>
       </div>
-    </div>
+    </li>
   );
 }
 
