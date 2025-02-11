@@ -92,7 +92,7 @@
   top: 55px;
 }
 
-.modal__error-message_type-register-error {
+.modal__error-message_type_register-error {
   color: #ff0000;
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -100,7 +100,7 @@
   margin-bottom: 8px;
 }
 
-.modal__error-message_type-login-error {
+.modal__error-message_type_login-error {
   color: #ff0000;
   font-family: "Inter", sans-serif;
   font-weight: 400;
