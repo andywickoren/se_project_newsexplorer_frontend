@@ -1,0 +1,164 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #0000004d;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_opened {
+  display: flex;
+}
+
+.modal__content {
+  background-color: #fff;
+  padding: 34px 36px 28px 36px;
+  max-width: 360px;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+}
+
+.modal__close {
+  position: absolute;
+  bottom: 0;
+  top: -408px;
+  right: -45px;
+  border: none;
+  background: transparent;
+}
+
+.modal__close-signup {
+  top: -493px;
+}
+
+.modal__close-icon {
+  cursor: pointer;
+}
+
+.modal__title {
+  margin: 0 0 22px 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.modal__label {
+  color: #2f71e5;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.modal__input {
+  color: #000;
+  display: block;
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 0 0 10px 0;
+  width: 100%;
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 31px;
+  margin-top: 9px;
+}
+
+.modal__input:focus {
+  border-bottom: 2px solid #007bff;
+  background-color: #f0f8ff;
+}
+
+.modal__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.modal__error-message {
+  color: #ff0000;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  top: 55px;
+}
+
+.modal__error-message_type_register-error {
+  color: #ff0000;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.modal__error-message_type_login-error {
+  color: #ff0000;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.modal__buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__signin-btn {
+  height: 47px;
+  width: 100%;
+  border-radius: 100px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  background-color: #2f71e5;
+  cursor: pointer;
+}
+
+.modal__or-signup-btn {
+  font-family: "Inter", sans-serif;
+  margin-top: 16px;
+  border: none;
+  background: transparent;
+  align-self: center;
+}
+
+.modal__or {
+  color: black;
+}
+
+.modal__signup {
+  color: #2f71e5;
+  cursor: pointer;
+}
+
+@media (max-width: 460px) {
+  .modal__close-signin {
+    right: -15px;
+  }
+
+  .modal__close-signup {
+    top: -495px;
+    right: -15px;
+  }
+}
+
+@media (max-width: 385px) {
+  .modal__close-signin {
+    right: 0px;
+  }
+
+  .modal__close-signup {
+    right: 0px;
+  }
+}

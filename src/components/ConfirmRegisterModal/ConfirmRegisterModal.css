@@ -1,0 +1,78 @@
+.confirm-register-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #0000004d;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-register-modal_opened {
+  display: flex;
+}
+
+.confirm-register-modal__content {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  height: 182px;
+  padding: 43px 36px 51px;
+  background-color: #fff;
+  position: relative;
+  max-width: 430px;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.confirm-register-modal__close {
+  position: absolute;
+  bottom: 0;
+  top: -225px;
+  right: -50px;
+  border: none;
+  background: transparent;
+}
+
+.confirm-register-modal__close-icon {
+  cursor: pointer;
+}
+.confirm-register-modal__message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.confirm-register-modal__text {
+  margin: 0 0 15px 0;
+}
+
+.confirm-register-modal
+  .confirm-register-modal__content
+  .confirm-register-modal__message
+  .confirm-register-modal__login-button {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+}
+
+.confirm-register-modal__login-button {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 24px;
+  border: none;
+  font: inherit;
+  color: #2f71e5;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.delete-modal__cancel-button {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  background-color: #fff;
+}

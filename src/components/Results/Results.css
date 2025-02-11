@@ -1,0 +1,8 @@
+.results__preloader {
+  position: relative;
+}
+
+.results__no-results {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,21 @@
+.avatar {
+  width: 464px;
+  height: 464px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: right;
+}
+
+@media (max-width: 1025px) {
+  .avatar {
+    width: 232px;
+    height: 232px;
+  }
+}
+
+@media (max-width: 685px) {
+  .avatar {
+    width: 272px;
+    height: 272px;
+  }
+}

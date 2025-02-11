@@ -1,0 +1,27 @@
+.navbar-mobile {
+  position: relative;
+}
+
+.navbar-mobile__menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.navbar-mobile__menu-icon_saved-news {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}

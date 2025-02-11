@@ -1,0 +1,9 @@
+@import "../src/vendors/normalize.css";
+@import "../src/fonts/fonts.css";
+
+button,
+input,
+select,
+textarea {
+  font-family: "Roboto Slab", serif;
+}
